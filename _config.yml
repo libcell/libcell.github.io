@@ -31,7 +31,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Bo Li's site
-subtitle: Your awesome subtitle
+subtitle: my subsite
 description: >- # this means to ignore newlines until "baseurl:"
   This is the demo site for a Jekyll theme version of
   HTML5 UP's sleek, responsive site template Prologue.
@@ -45,19 +45,19 @@ url: "https://libcell.github.io/" # the base hostname & protocol for your site
 
 # Social settings
 # Make sure to include the full url including protocol, e.g. https://github.com/chrisbobbe
-twitter_url:
-facebook_url:
-googleplus_url:
-instagram_url:
-linkedin_url:
-github_url:
-stackoverflow_url:
-pinterest_url:
-slack_url:
-dribbble_url:
+#twitter_url:
+#facebook_url:
+#googleplus_url:
+#instagram_url:
+#linkedin_url:
+#github_url:
+#stackoverflow_url:
+#pinterest_url:
+#slack_url:
+#dribbble_url:
 
 # Google Analytics Tracking ID goes here:
-google_analytics:
+#google_analytics:
 
 # The following settings are NECESSARY for the Prologue theme to run:
 remote_theme: chrisbobbe/jekyll-theme-prologue
