@@ -1,37 +1,56 @@
-## Welcome to Bo Li's GitHub Pages
+# Make your website with R Markdown in minutes
 
-You can use the [editor on GitHub](https://github.com/libcell/libcell.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+This is a template (and tutorial) for creating your website with R Markdown in minutes.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The official document from RStudio can be found [here](http://rmarkdown.rstudio.com/rmarkdown_websites.html).
 
-### Markdown
+## Procedure
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Prerequisites
 
-```markdown
-Syntax highlighted code block
+- Make sure that you have the latest versions of R, RStudio and package rmarkdown. I had problems of encoding because of that. 
 
-# Header 1
-## Header 2
-### Header 3
+- Make sure that you have enabled Git in RStudio. More information can be found [there](https://privefl.github.io/advr38book/good-practices.html#git).
 
-- Bulleted
-- List
+- You need a GitHub account.
 
-1. Numbered
-2. List
+### Make the first version of your website
 
-**Bold** and _Italic_ and `Code` text
+- Fork this repo (top-right) and rename it to be 'YOURGITHUB.github.io' (in Settings of your brand new repo).
 
-[Link](url) and ![Image](src)
-```
+- Get the link from cloning the repo. Use the green button "Clone" and make sure you use SSH, not HTTPS. Then, go to RStudio, create a New Project > Version Control > Git and copy this link. You have cloned your new repo as an R project.
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+- Build the website by running `rmarkdown::render_site(encoding = "UTF-8")` or just `Ctrl/Cmd + Shift + B`.
 
-### Jekyll Themes
+- Commit and push everything from RStudio.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/libcell/libcell.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+- Go see your new website at https://YOURGITHUB.github.io/index.html.
 
-### Support or Contact
+### Change the content of your website
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+- Modify `_site.yml`, `index.Rmd`, `about.Rmd`, `cv.Rmd` and `CV.pdf` with your own content. 
+- Build your website again. At any moment, you can preview your website locally, by rendering your site and viewing any of your local html file in your Web Browser. 
+
+- Commit and push everything from RStudio.
+
+- Go see your new website with your own content at https://YOURGITHUB.github.io/.
+
+### The blog part
+
+For now, the 'Blog' link is giving a 404 page. 
+
+If you want to add a static blog to your webpage, go [there](https://github.com/privefl/jekyll-now-r-template).
+
+## Two examples
+
+You can see for example 
+- [my own website](https://privefl.github.io/),
+
+- [the website of the R user group in Grenoble](https://r-in-grenoble.github.io/).
+
+## Conclusion
+
+As a reminder, all credit goes to the geniuses at RStudio (thanks also to [GitHub pages](https://pages.github.com/)). I just made some minor modifications and made a tuto about how to use all this together.
+
+If anything is false or not clear enough, feel free to contact me or open an issue.
+If it is an issue only related with R Markdown, you'll find a better answer posting [there](https://github.com/rstudio/rmarkdown).
