@@ -18,7 +18,7 @@ output:
  
 ## Biography
 
-Hello everyone! I am Bo Li, a bioinformatician and associated professor in Chongqing Normal University of China. Before coming to Chongqing, I was a teacher at Wuhan Bioengineering Institute, mainly teaching molecular biology and cell biology.
+Hi! I am Bo Li, a bioinformatician and associated professor in Chongqing Normal University, China. Before coming to Chongqing, I was a teacher at Wuhan Bioengineering Institute, mainly teaching molecular biology.
 
 ## Education
 
