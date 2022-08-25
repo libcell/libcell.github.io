@@ -2,14 +2,14 @@
 title: "Bo Li"
 image: "libo.png"
 links:
-  - label: LinkedIn
-    url: "https://linkedin.com/"
-  - label: Twitter
-    url: "https://twitter.com/"
+  - label: CQNU
+    url: "https://www.cqnu.edu.cn/"
+  - label: Researchgate
+    url: "https://www.researchgate.net/profile/Bo-Li-42"
   - label: GitHub
-    url: "https://github.com/"
+    url: "https://github.com/libcell"
   - label: Email
-    url: "mailto:email@email.com"
+    url: "mailto:libcell@cqnu.edu.cn"
 output:
   postcards::trestles
 ---
