@@ -42,5 +42,14 @@ B.S. in Bioengineering | September 1999 - July 2003
 
 **Wuhan Bioengineering Institute** | Faculty Member | July 2004 - June 2010
 
-**Academy of Military Medical Sciences** | lab technician | July 2003 - May 2005
+**Academy of Military Medical Sciences** | lab technician | July 2003 - May 2004
 
+## Research Interest
+
+**Machine learning methodology and its applications in biomedicine**
+
+**Developing and maintaining bioinformatics database and software**
+
+**AI and drug discovery**
+
+**Educational data mining and its applications in biology teaching**
