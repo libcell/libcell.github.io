@@ -22,11 +22,11 @@ Hello everyone! I am Bo Li, a bioinformatician and associated professor in Chong
 
 ## Education
 
-**Chongqing University of China** | Ph.D. in Bioinformatics | Sep. 2013 - Jun. 2017
+**Chongqing University of China** | *Ph.D. in Bioinformatics* | Sep. 2013 - Jun. 2017
 
-**Chongqing University of China** | M.S. in Biophysics | Sep. 2010 - May 2013
+**Chongqing University of China** | *M.S. in Biophysics* | Sep. 2010 - May 2013
 
-**Northwest A&F University of China** | B.S. in Bioengineering | Sep. 1999 - Jul. 2003
+**Northwest A&F University of China** | *B.S. in Bioengineering* | Sep. 1999 - Jul. 2003
 
 ## Experience
 
@@ -40,10 +40,10 @@ Hello everyone! I am Bo Li, a bioinformatician and associated professor in Chong
 
 ## Research
 
-**Machine learning methodology in biomedicine**
+- Machine learning methodology in biomedicine
 
-**Developing bioinformatics database & software**
+- Developing bioinformatics database & software
 
-**AI and drug discovery**
+- AI and drug discovery
 
-**Educational data mining in biology teaching**
+- Educational data mining in biology teaching
