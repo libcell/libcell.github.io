@@ -14,7 +14,4 @@ output:
   postcards::jolla_blue
 ---
  
-Raised in New Jersey by two lawyers, I am now an aspiring data artist and 
-competitive rock climber. I moved to Seattle to fly floatplanes, but I got 
-caught up in the startup world. Send me a WhatsApp message if you have good 
-turnip prices.
+Hello everyone! I am Bo Li, an bioinformatician and associate professor in College of Life Sciences, Chongqing Normal University of China. Before that, I was a teacher at Wuhan Bioengineering Institute, mainly teaching molecular biology.
