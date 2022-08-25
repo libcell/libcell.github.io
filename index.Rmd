@@ -38,7 +38,7 @@ Hello everyone! I am Bo Li, a bioinformatician and associated professor in Chong
 
 **Academy of Military Medical Sciences** | lab technician | July 2003 - May 2004
 
-## Research Interest
+## Research
 
 **Machine learning methodology in biomedicine**
 
