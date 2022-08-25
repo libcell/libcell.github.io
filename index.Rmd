@@ -47,3 +47,14 @@ Hello everyone! I am Bo Li, a bioinformatician and associated professor in Chong
 - AI and drug discovery
 
 - Educational data mining in biology teaching
+
+## Teaching
+
+- **Bioinformatics** (Undergraduates in BioSci. / Biotech., Master candidates, Ph. D candidates)
+
+- **Molecular Biology** (Undergraduates majoring in BioScience, Sino-foreign cooperation)
+
+- **Scientific Writing**
+
+- **Food Industry Information and Network Technology** (for Master candidates)
+
