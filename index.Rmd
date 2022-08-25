@@ -1,6 +1,6 @@
 ---
 title: "Bo Li"
-image: "xiang.jpg"
+image: "libo.png"
 links:
   - label: LinkedIn
     url: "https://linkedin.com/"
