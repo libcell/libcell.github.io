@@ -2,12 +2,14 @@
 title: "Bo Li"
 image: "libo.png"
 links:
-  - label: CQNU
+  - label: iCQNU
     url: "https://www.cqnu.edu.cn/"
   - label: RGate
     url: "https://www.researchgate.net/profile/Bo-Li-42"
   - label: GitHub
     url: "https://github.com/libcell"
+  - label: My lab
+    url: "https://www.x-mol.com/groups/ciblab/"
   - label: Email
     url: "mailto:libcell@cqnu.edu.cn"
 output:
