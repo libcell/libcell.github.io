@@ -50,11 +50,8 @@ Hello everyone! I am Bo Li, a bioinformatician and associated professor in Chong
 
 ## Teaching
 
-- **Bioinformatics** (Undergraduates in BioSci. / Biotech., Master candidates, Ph. D candidates)
+- Bachelar: **Bioinformatics** (B.S. of BioSci. / Biotech.), **Molecular Biology** (B.S. of BioSci., Sino-foreign cooperation), **Scientific Writing** (B.S. of BioSci.)
 
-- **Molecular Biology** (Undergraduates majoring in BioScience, Sino-foreign cooperation)
+- Master: **Advanced Bioinformatics** (M.S. of Biology), **Food Industry Information and Network Technology** (M.S. of Food Sci.)
 
-- **Scientific Writing**
-
-- **Food Industry Information and Network Technology** (for Master candidates)
-
+- Ph.D: **Advanced Bioinformatics** (M.S. of Biology)
