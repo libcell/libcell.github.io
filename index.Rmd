@@ -14,7 +14,7 @@ output:
   postcards::trestles
 ---
  
-## Bio
+## Biography
 
 Frank Hermosillo studies neural networks and their applications at Google 
 Brain. His research focuses on differentiable network pruning approximation and 
@@ -25,13 +25,17 @@ Times Magazine.
 
 ## Education
 
-**Massachusetts Institute of Technology** | Cambridge, MA
+**Chongqing University** | Chongqing, China
 
-Ph.D. in Computer Science | September 2009 - May 2014
+Ph.D. in Bioinformatics | September 2013 - June 2017
 
-**The University of California, Berkeley** | Berkeley, CA
+**Chongqing University** | Chongqing, China
 
-B.S. in Computer Science | September 2005 - May 2009
+M.S. in Biophysics | September 2010 - May 2013
+
+**Northwest A&F University** | Yangling, Shaanxi, China
+
+B.S. in Bioengineering | September 1999 - July 2003
 
 ## Experience
 
