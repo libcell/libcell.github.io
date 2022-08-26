@@ -1,0 +1,59 @@
+---
+title: "Bo Li, PhD"
+image: "images/libo.png"
+links:
+  - label: iCQNU
+    url: "https://www.cqnu.edu.cn/"
+  - label: RGate
+    url: "https://www.researchgate.net/profile/Bo-Li-42"
+  - label: GitHub
+    url: "https://github.com/libcell"
+  - label: My lab
+    url: "https://www.x-mol.com/groups/ciblab/"
+  - label: Email
+    url: "mailto:libcell@cqnu.edu.cn"
+site: distill::distill_website
+output:
+  postcards::trestles
+---
+
+## Biography
+
+Hi! I am Bo Li, a bioinformatician and associated professor in Chongqing Normal University, China. Before coming to Chongqing, I was a teacher at Wuhan Bioengineering Institute, mainly teaching molecular biology.
+
+## Education
+
+- `r fontawesome::fa("r-project", fill = "steelblue")` **Ph.D. in Bioinformatics** | *Chongqing University of China* | Sep. 2013 - Jun. 2017
+
+- **M.S. in Biophysics** | *Chongqing University of China* | Sep. 2010 - Jun. 2013
+
+- **B.S. in Bioengineering** | *Northwest A&F University of China* | Sep. 1999 - Jul. 2003
+
+## Experience
+
+- **Principle Investigator (AP)** | *Chongqing Normal University* | January 2020 - Present
+
+- **Lecturer** | *Chongqing Normal University* | July 2017 - June 2019
+
+- **Faculty Member** | *Wuhan Bioengineering Institute* | July 2004 - June 2010
+
+- **Lab Technician** | *Academy of Military Medical Sciences* | July 2003 - May 2004
+
+## Research
+
+- Machine learning methodology in biomedicine
+
+- Developing bioinformatics database & software
+
+- AI and drug discovery
+
+## Teaching
+
+- Bachelar: [**Bioinformatics**](https://uclouvain-cbio.github.io/WSBIM1207/index.html) (BioSci. & Biotech.), **Molecular Biology** (BioSci., SFCO), **Scientific Writing** (BioSci.)
+
+- Master: **Advanced Bioinformatics** (Biology), **Food Information & Internet Technology** (Food Sci.)
+
+- Doctor: **Advanced Bioinformatics** (Biology)
+
+- Others: [**R Language in Data Science**](http://course.cloudwe.tech/node/106) (for CQMU)
+
