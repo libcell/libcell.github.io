@@ -1,6 +1,6 @@
 ---
-title: "Bo Li"
-image: "libo.png"
+title: "Bo Li, PhD"
+image: "images/libo.png"
 links:
   - label: iCQNU
     url: "https://www.cqnu.edu.cn/"
@@ -12,10 +12,11 @@ links:
     url: "https://www.x-mol.com/groups/ciblab/"
   - label: Email
     url: "mailto:libcell@cqnu.edu.cn"
+site: distill::distill_website
 output:
   postcards::trestles
 ---
- 
+
 ## Biography
 
 Hi! I am Bo Li, a bioinformatician and associated professor in Chongqing Normal University, China. Before coming to Chongqing, I was a teacher at Wuhan Bioengineering Institute, mainly teaching molecular biology.
