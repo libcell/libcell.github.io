@@ -54,5 +54,5 @@ Hi! I am Bo Li, a bioinformatician and associated professor in Chongqing Normal 
 
 - Doctor: **Advanced Bioinformatics** (Biology)
 
-- Others: **R Programming** (for CQMU)
+- Others: [**R Programming**](http://course.cloudwe.tech/node/106) (for CQMU)
 
