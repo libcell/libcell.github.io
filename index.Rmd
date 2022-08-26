@@ -48,7 +48,7 @@ Hi! I am Bo Li, a bioinformatician and associated professor in Chongqing Normal 
 
 ## Teaching
 
-- Bachelar: **Bioinformatics** (BioSci. & Biotech.), **Molecular Biology** (BioSci., SFCO), **Scientific Writing** (BioSci.)
+- Bachelar: [**Bioinformatics**](https://uclouvain-cbio.github.io/WSBIM1207/index.html) (BioSci. & Biotech.), **Molecular Biology** (BioSci., SFCO), **Scientific Writing** (BioSci.)
 
 - Master: **Advanced Bioinformatics** (Biology), **Food Information & Internet Technology** (Food Sci.)
 
