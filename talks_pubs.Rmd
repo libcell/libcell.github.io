@@ -1,0 +1,43 @@
+---
+title: "Talks + Publications"
+description: |
+  Selected talks and publications
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Talks
+
+- [Better Science for Future Us](https://docs.google.com/presentation/d/1HGw4P095-lblHiGQHXYidHiVysjrPxuojxTxKtE13vk/edit?usp=sharing) — July 12, 2021: Plenary at the inaugural Society for Open, Reliable, and Transparent Ecology and Evolutionary Biology [SORTEE conference](https://www.sortee.org/events/) (30 minutes) ([video](https://osf.io/47req/))
+
+- [Open science as a movement and the art of Openscapes](https://docs.google.com/presentation/d/11-flAlM33E7GwkzlJuuzbs8icfTgYnG7UmDwDkgD49k/edit?usp=sharing) — June 5, 2021: Keynote with Dr. Allison Horst at [CascadiaR Conference](https://cascadiarconf.com/) (20 minutes) 
+
+- [How to empower researchers with open science through meeting analytical needs and supporting people](https://docs.google.com/presentation/d/1AmnPV8eLQl9_0EuHQAqp7xBMHcUlcFkM30509BwJkMA/edit?usp=sharing) - November 5, 2020. National Academies of Sciences, Engineering, and Medicine (NASEM) [Roundtable on Aligning Incentives for Open Science](https://www.nationalacademies.org/our-work/roundtable-on-aligning-incentives-for-open-science) ([published slides](https://docs.google.com/presentation/d/e/2PACX-1vSq8GlWfKNeW8SvAaqae8Uwg9TNKLO3SvdHZQulg75KnavcbA-R78JXtY3ogcEMNJzdxFxCptcSIVfS/pub?start=false&loop=false&delayms=3000))
+
+- [Entryways to open data science and the power of welcome](https://docs.google.com/presentation/d/1DjrMaEOw1F7zAIEXq3ZjiiyaqVAjydLyYww7huGfch8/edit?usp=sharing) - July 16, 2020: Plenary at [Earth Science Information Partners Conference](https://2020esipsummermeeting.sched.com/event/cItS/plenary), Remote (15 mins) ([Figshare](https://esip.figshare.com/articles/Entryways_to_open_data_science_and_the_power_of_welcome/12654689/1)) ([video, starts ~ 2:55](https://youtu.be/HAh7Xy9ReJo?t=1734))
+
+- [R for better science in less time](https://jules32.github.io/useR-2019-keynote/#1) - July 10, 2019: Opening Keynote, [useR Conference](http://user2019.r-project.org/), Toulouse, France (45 minutes) [(video, starts ~46:30)](https://www.youtube.com/watch?v=Z8PqwFPqn6Y)
+
+
+# Publications
+
+- [Open software means kinder science](https://blogs.scientificamerican.com/observations/open-software-means-kinder-science/). Lowndes 2019, *Scientific  American*.
+
+- [Supercharge your research: a ten-week plan for open data science](https://www.nature.com/articles/d41586-019-03335-4). Lowndes et al. 2019, *Nature*.
+
+- [Our path to better science in less time using open data science tools](https://www.nature.com/articles/s41559-017-0160). Lowndes et al. 2017, *Nature Ecology & Evolution*.
+
+    - [Nature article by Jeffrey Perkel: My digital toolbox: Julia Stewart Lowndes](http://blogs.nature.com/naturejobs/2017/05/23/techblog-julia-stewart-lowndes/)
+
+- [Best practices for assessing ocean health in multiple contexts using tailorable frameworks](https://doi.org/10.7717/peerj.1503). Lowndes et al. 2015, *PeerJ*.
+
+- [Combined climate- and prey-mediated range expansion of Humboldt squid (*Dosidicus gigas*), a large marine predator in the California Current System](http://onlinelibrary.wiley.com/doi/10.1111/gcb.12502/abstract). Stewart et al. 2014, *Global Change Biology*.
+
+- [Behavioral ecology of Jumbo squid (*Dosidicus gigas*): in relation to oxygen minimum zones](http://www.sciencedirect.com/science/article/pii/S0967064512000860). Stewart et al. 2013, *Deep Sea Research II*.
+
+<br>
+
+See also [complete list of publications and talks](talks_pubs_complete.html)
+
