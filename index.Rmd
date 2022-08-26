@@ -46,8 +46,6 @@ Hi! I am Bo Li, a bioinformatician and associated professor in Chongqing Normal 
 
 - AI and drug discovery
 
-- Educational data mining in biology teaching
-
 ## Teaching
 
 - Bachelar: **Bioinformatics** (BioSci. & Biotech.), **Molecular Biology** (BioSci., SFCO), **Scientific Writing** (BioSci.)
@@ -55,3 +53,6 @@ Hi! I am Bo Li, a bioinformatician and associated professor in Chongqing Normal 
 - Master: **Advanced Bioinformatics** (Biology), **Food Information & Internet Technology** (Food Sci.)
 
 - Doctor: **Advanced Bioinformatics** (Biology)
+
+- Others: **R Programming** (for CQMU)
+
