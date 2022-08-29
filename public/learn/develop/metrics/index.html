@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!DOCTYPE html>
+<html lang="en-us">
+
+
+
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/main-site.css">
+<link rel="stylesheet" href="/css/fa5-all.css">
+<style type="text/css">
+    body {
+	background-color: #ffffff;
+	color: #404040
+}
+
+/* Links */
+
+a {
+  color: #CA225E;
+}
+
+a:hover {
+  color: #cc3168;
+}
+
+/* Landing page content bands */
+
+#homeContent .band.first {
+  background-color: #ffffff
+}
+
+#homeContent .band.second {
+  background-color: #fcfcfc
+}
+
+#homeContent .band.third {
+  background-color: #ffffff
+}
+
+/* Top navigation bar menu */
+
+#rStudioHeader {
+  background-color: #ffffff;
+  color: black;
+}
+
+#rStudioHeader .productName {
+  color: #CA225E
+}
+
+#rStudioHeader .productName:hover {
+  color: #00000075
+}
+
+#rStudioHeader #menu .menuItem.a {
+  background-color: #75aadb;
+  color: black;
+}
+
+#rStudioHeader #menu .menuItem:hover {
+  background-color: white;
+  color: #CA225E;
+}
+
+#rStudioHeader #menu .menuItem.current {
+  background-color: #fcfcfc;
+  color: #CA225E;
+  text-decoration: none;
+}
+
+/* Footer */
+
+#rStudioFooter.band {
+  background-color: #CA225E40;
+}
+
+#rStudioFooter .bandContent #copyright {
+  color: #CA225E;
+}
+
+/* Tables */
+
+table tbody tr:nth-child(even){
+  background-color: #fcfcfc;
+}
+
+table tbody tr:nth-child(odd){
+  background-color: #1a162d10;
+}
+
+.latest {
+  border-top: .5em solid <no value>;
+}
+</style>
+
+  <link rel="stylesheet" href="/css/tm.css">
+
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<meta name="og:image" content="https://www.tidymodels.org/images/feature_summary_large_image.jpg" >
+
+  <meta property="twitter:card" content="summary_large_image">
+
+<meta name="twitter:image" content="https://www.tidymodels.org/images/feature_summary_large_image.jpg" ><meta name="generator" content="Hugo 0.96.0" />
+
+<meta property="og:type" content="website"><title>Learn - Custom performance metrics</title>
+    <meta property="og:title" content="Learn - Custom performance metrics">
+    
+    
+    
+    
+    <meta property="description" content="Create a new performance metric and integrate it with yardstick functions.
+">
+    <meta property="og:description" content="Create a new performance metric and integrate it with yardstick functions.
+">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png" />
+<link rel="manifest" href="/images/favicons/site.webmanifest" />
+<link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" />
+<link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" href="/images/favicons/browserconfig.xml" >
+
+
+
+<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/js/site.js"></script>
+
+
+  <script type="text/javascript" src="/js/tm.js"></script>
+
+
+<link rel="icon" href="/images/favicon.ico" />
+
+
+<script defer data-domain="tidymodels.org,all.tidymodels.org" src="https://plausible.io/js/plausible.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
+
+
+
+  <body>
+    <div id="appTidyverseSite" class="shrinkHeader alwaysShrinkHeader">
+      <div id="main">
+        
+        <div id="rStudioHeader">
+          <div class="band">
+            <div class="innards bandContent">
+              <div>
+                <a class="productName" href="/">Tidymodels</a>
+                
+              </div>
+              <div id="menu">
+  <div id="menuToggler"></div>
+  <div id="menuItems" class="">
+    
+    
+      
+      
+      
+    <a class="menuItem " href="/packages/">Packages</a>
+    
+      
+      
+      
+    <a class="menuItem " href="/start/">Get Started</a>
+    
+      
+      
+      
+    <a class="menuItem current" href="/learn/">Learn</a>
+    
+      
+      
+      
+    <a class="menuItem " href="/help/">Help</a>
+    
+      
+      
+      
+    <a class="menuItem " href="/contribute/">Contribute</a>
+    
+      
+      
+      
+    <a class="menuItem " href="/find/"><i class="fas fa-search fa-lg"></i> </a>
+    
+      
+      
+      
+    <a class="menuItem " href="https://github.com/tidymodels/"><i class="fab fa-github fa-lg"></i></a>
+    
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+</head>
+<body>
+
+
+ 
+
+
+
+
+<div class="band padForHeader pushFooter">
+  <div class="bandContent">
+    <div class="full splitColumns withMobileMargins">
+      <div class="column75">
+        
+        <div class="section">
+          <div class="sectionTitle">
+            <a href="/learn/">
+              <i class="fas fa-chevron-left"></i>&nbsp;Back to Learn
+            </a>
+          </div>
+        </div>
+
+      <h1 class="article-title">Custom performance metrics</h1>
+
+      
+      <div class="article-header">
+        </div>
+        
+
+      
+      
+      
+      
+        </p>
+      
+        
+      <div class="learning-objective-container">
+        <h2 class="learning-objective">Learning objective</h2>
+        <p class="single-learning-objective-text">Create a new performance metric and integrate it with yardstick functions.</p>
+      </div>
+      
+
+      <div class="article-content">
+      <h2 id="introduction">Introduction</h2>
+<p>To use the code in this article, you will need to install the following packages: rlang and tidymodels.</p>
+<p>The <a href="https://yardstick.tidymodels.org/">yardstick</a> package already includes a large number of metrics, but there&rsquo;s obviously a chance that you might have a custom metric that hasn&rsquo;t been implemented yet. In that case, you can use a few of the tools yardstick exposes to create custom metrics.</p>
+<p>Why create custom metrics? With the infrastructure yardstick provides, you get:</p>
+<ul>
+<li>Standardization between your metric and other preexisting metrics</li>
+<li>Automatic error handling for types and lengths</li>
+<li>Automatic selection of binary / multiclass metric implementations</li>
+<li>Automatic <code>NA</code> handling</li>
+<li>Support for grouped data frames</li>
+<li>Support for use alongside other metrics in <code>metric_set()</code></li>
+</ul>
+<p>The implementation for metrics differ slightly depending on whether you are implementing a numeric, class, or class probability metric. Examples for numeric and classification metrics are given below. We would encourage you to look into the implementation of <code>roc_auc()</code> after reading this vignette if you want to work on a class probability metric.</p>
+<h2 id="numeric-example-mse">Numeric example: MSE</h2>
+<p>Mean squared error (sometimes MSE or from here on, <code>mse()</code>) is a numeric metric that measures the average of the squared errors. Numeric metrics are generally the simplest to create with yardstick, as they do not have multiclass implementations. The formula for <code>mse()</code> is:</p>
+<p>$$ MSE = \frac{1}{N} \sum_{i=1}^{N} (truth_i - estimate_i) ^ 2 = mean( (truth - estimate) ^ 2) $$</p>
+<p>All metrics should have a data frame version, and a vector version. The data frame version here will be named <code>mse()</code>, and the vector version will be <code>mse_vec()</code>.</p>
+<h3 id="vector-implementation">Vector implementation</h3>
+<p>To start, create the vector version. Generally, all metrics have the  same arguments unless the metric requires an extra parameter (such as <code>beta</code> in <code>f_meas()</code>). To create the vector function, you need to do two things:</p>
+<ol>
+<li>Create an internal implementation function, <code>mse_impl()</code>.</li>
+<li>Pass on that implementation function to <code>metric_vec_template()</code>.</li>
+</ol>
+<p>Below, <code>mse_impl()</code> contains the actual implementation of the metric, and takes <code>truth</code> and <code>estimate</code> as arguments along with any metric specific arguments.</p>
+<p>The yardstick function <code>metric_vec_template()</code> accepts the implementation function along with the other arguments to <code>mse_vec()</code> and actually executes <code>mse_impl()</code>. Additionally, it has a <code>cls</code> argument to specify the allowed class type of <code>truth</code> and <code>estimate</code>. If the classes are the same, a single character class can be passed, and if they are different a character vector of length 2 can be supplied.</p>
+<p>The <code>metric_vec_template()</code> helper handles the removal of <code>NA</code> values in your metric, so your implementation function does not have to worry about them. It performs type checking using <code>cls</code> and also checks that the <code>estimator</code> is valid, the second of which is covered in the classification example. This way, all you have to worry about is the core implementation.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#00f">library</span>(tidymodels)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mse_vec <span style="color:#666">&lt;-</span> <span style="color:#00f">function</span>(truth, estimate, na_rm <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">TRUE</span>, <span style="color:#008000;font-weight:bold">...</span>) {
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  mse_impl <span style="color:#666">&lt;-</span> <span style="color:#00f">function</span>(truth, estimate) {
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">mean</span>((truth <span style="color:#666">-</span> estimate) ^ <span style="color:#666">2</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">metric_vec_template</span>(
+</span></span><span style="display:flex;"><span>    metric_impl <span style="color:#666">=</span> mse_impl,
+</span></span><span style="display:flex;"><span>    truth <span style="color:#666">=</span> truth, 
+</span></span><span style="display:flex;"><span>    estimate <span style="color:#666">=</span> estimate,
+</span></span><span style="display:flex;"><span>    na_rm <span style="color:#666">=</span> na_rm,
+</span></span><span style="display:flex;"><span>    cls <span style="color:#666">=</span> <span style="color:#ba2121">&#34;numeric&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>At this point, you&rsquo;ve created the vector version of the mean squared error metric.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#00f">data</span>(<span style="color:#ba2121">&#34;solubility_test&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">mse_vec</span>(
+</span></span><span style="display:flex;"><span>  truth <span style="color:#666">=</span> solubility_test<span style="color:#666">$</span>solubility, 
+</span></span><span style="display:flex;"><span>  estimate <span style="color:#666">=</span> solubility_test<span style="color:#666">$</span>prediction
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; [1] 0.521</span>
+</span></span></code></pre></div><p>Intelligent error handling is immediately available.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#00f">mse_vec</span>(truth <span style="color:#666">=</span> <span style="color:#ba2121">&#34;apple&#34;</span>, estimate <span style="color:#666">=</span> <span style="color:#666">1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; Error in `validate_class()`:</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; ! `truth` should be a numeric but a character was supplied.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">mse_vec</span>(truth <span style="color:#666">=</span> <span style="color:#666">1</span>, estimate <span style="color:#666">=</span> <span style="color:#00f">factor</span>(<span style="color:#ba2121">&#34;xyz&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; Error in `validate_class()`:</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; ! `estimate` should be a numeric but a factor was supplied.</span>
+</span></span></code></pre></div><p><code>NA</code> values are removed if <code>na_rm = TRUE</code> (the default). If <code>na_rm = FALSE</code> and any <code>NA</code> values are detected, then the metric automatically returns <code>NA</code>.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># NA values removed</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">mse_vec</span>(truth <span style="color:#666">=</span> <span style="color:#00f">c</span>(<span style="color:#008000;font-weight:bold">NA</span>, <span style="color:#666">.5</span>, <span style="color:#666">.4</span>), estimate <span style="color:#666">=</span> <span style="color:#00f">c</span>(<span style="color:#666">1</span>, <span style="color:#666">.6</span>, <span style="color:#666">.5</span>))
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; [1] 0.01</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># NA returned</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">mse_vec</span>(truth <span style="color:#666">=</span> <span style="color:#00f">c</span>(<span style="color:#008000;font-weight:bold">NA</span>, <span style="color:#666">.5</span>, <span style="color:#666">.4</span>), estimate <span style="color:#666">=</span> <span style="color:#00f">c</span>(<span style="color:#666">1</span>, <span style="color:#666">.6</span>, <span style="color:#666">.5</span>), na_rm <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">FALSE</span>)
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; [1] NA</span>
+</span></span></code></pre></div><h3 id="data-frame-implementation">Data frame implementation</h3>
+<p>The data frame version of the metric should be fairly simple. It is a generic function with a <code>data.frame</code> method that calls the yardstick helper, <code>metric_summarizer()</code>, and passes along the <code>mse_vec()</code> function to it along with versions of <code>truth</code> and <code>estimate</code> that have been wrapped in <code>rlang::enquo()</code> and then unquoted with <code>!!</code> so that non-standard evaluation can be supported.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#00f">library</span>(rlang)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mse <span style="color:#666">&lt;-</span> <span style="color:#00f">function</span>(data, <span style="color:#008000;font-weight:bold">...</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">UseMethod</span>(<span style="color:#ba2121">&#34;mse&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mse <span style="color:#666">&lt;-</span> <span style="color:#00f">new_numeric_metric</span>(mse, direction <span style="color:#666">=</span> <span style="color:#ba2121">&#34;minimize&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mse.data.frame <span style="color:#666">&lt;-</span> <span style="color:#00f">function</span>(data, truth, estimate, na_rm <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">TRUE</span>, <span style="color:#008000;font-weight:bold">...</span>) {
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">metric_summarizer</span>(
+</span></span><span style="display:flex;"><span>    metric_nm <span style="color:#666">=</span> <span style="color:#ba2121">&#34;mse&#34;</span>,
+</span></span><span style="display:flex;"><span>    metric_fn <span style="color:#666">=</span> mse_vec,
+</span></span><span style="display:flex;"><span>    data <span style="color:#666">=</span> data,
+</span></span><span style="display:flex;"><span>    truth <span style="color:#666">=</span> <span style="color:#666">!!</span> <span style="color:#00f">enquo</span>(truth),
+</span></span><span style="display:flex;"><span>    estimate <span style="color:#666">=</span> <span style="color:#666">!!</span> <span style="color:#00f">enquo</span>(estimate), 
+</span></span><span style="display:flex;"><span>    na_rm <span style="color:#666">=</span> na_rm,
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>And that&rsquo;s it. The yardstick package handles the rest with an internal call to <code>summarise()</code>.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#00f">mse</span>(solubility_test, truth <span style="color:#666">=</span> solubility, estimate <span style="color:#666">=</span> prediction)
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # A tibble: 1 × 3</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   .metric .estimator .estimate</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 1 mse     standard       0.521</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># Error handling</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">mse</span>(solubility_test, truth <span style="color:#666">=</span> solubility, estimate <span style="color:#666">=</span> <span style="color:#00f">factor</span>(<span style="color:#ba2121">&#34;xyz&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; Error in `dplyr::summarise()`:</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; ! Problem while computing `.estimate = metric_fn(truth =</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   solubility, estimate = factor(&#34;xyz&#34;), na_rm = na_rm)`.</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; Caused by error in `validate_class()`:</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; ! `estimate` should be a numeric but a factor was supplied.</span>
+</span></span></code></pre></div><p>Let&rsquo;s test it out on a grouped data frame.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#00f">library</span>(dplyr)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">set.seed</span>(<span style="color:#666">1234</span>)
+</span></span><span style="display:flex;"><span>size <span style="color:#666">&lt;-</span> <span style="color:#666">100</span>
+</span></span><span style="display:flex;"><span>times <span style="color:#666">&lt;-</span> <span style="color:#666">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># create 10 resamples</span>
+</span></span><span style="display:flex;"><span>solubility_resampled <span style="color:#666">&lt;-</span> <span style="color:#00f">bind_rows</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">replicate</span>(
+</span></span><span style="display:flex;"><span>    n <span style="color:#666">=</span> times,
+</span></span><span style="display:flex;"><span>    expr <span style="color:#666">=</span> <span style="color:#00f">sample_n</span>(solubility_test, size, replace <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">TRUE</span>),
+</span></span><span style="display:flex;"><span>    simplify <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">FALSE</span>
+</span></span><span style="display:flex;"><span>  ),
+</span></span><span style="display:flex;"><span>  .id <span style="color:#666">=</span> <span style="color:#ba2121">&#34;resample&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>solubility_resampled <span style="color:#666">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">group_by</span>(resample) <span style="color:#666">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">mse</span>(solubility, prediction)
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # A tibble: 10 × 4</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;    resample .metric .estimator .estimate</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;    &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  1 1        mse     standard       0.512</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  2 10       mse     standard       0.454</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  3 2        mse     standard       0.513</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  4 3        mse     standard       0.414</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  5 4        mse     standard       0.543</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  6 5        mse     standard       0.456</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  7 6        mse     standard       0.652</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  8 7        mse     standard       0.642</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  9 8        mse     standard       0.404</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 10 9        mse     standard       0.479</span>
+</span></span></code></pre></div><h2 id="class-example-miss-rate">Class example: miss rate</h2>
+<p>Miss rate is another name for the false negative rate, and is a classification metric in the same family as <code>sens()</code> and <code>spec()</code>. It follows the formula:</p>
+<p>$$ miss_rate = \frac{FN}{FN + TP} $$</p>
+<p>This metric, like other classification metrics, is more easily computed when expressed as a confusion matrix. As you will see in the example, you can  achieve this with a call to <code>base::table(estimate, truth)</code> which correctly puts the &ldquo;correct&rdquo; result in the columns of the confusion matrix.</p>
+<p>Classification metrics are more complicated than numeric ones because you have to think about extensions to the multiclass case. For now, let&rsquo;s start with  the binary case.</p>
+<h3 id="vector-implementation-1">Vector implementation</h3>
+<p>The vector implementation for classification metrics initially has the same setup  as numeric metrics, but has an additional argument, <code>estimator</code> that determines the type of estimator to use (binary or some kind of multiclass implementation or averaging). This argument is auto-selected for the user, so default it to  <code>NULL</code>. Additionally, pass it along to <code>metric_vec_template()</code> so that it can check the provided <code>estimator</code> against the classes of <code>truth</code> and <code>estimate</code> to see if they are allowed.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># Logic for `event_level`</span>
+</span></span><span style="display:flex;"><span>event_col <span style="color:#666">&lt;-</span> <span style="color:#00f">function</span>(xtab, event_level) {
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">if </span>(<span style="color:#00f">identical</span>(event_level, <span style="color:#ba2121">&#34;first&#34;</span>)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">colnames</span>(xtab)[[1]]
+</span></span><span style="display:flex;"><span>  } else {
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">colnames</span>(xtab)[[2]]
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>miss_rate_vec <span style="color:#666">&lt;-</span> <span style="color:#00f">function</span>(truth, 
+</span></span><span style="display:flex;"><span>                          estimate, 
+</span></span><span style="display:flex;"><span>                          estimator <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">NULL</span>, 
+</span></span><span style="display:flex;"><span>                          na_rm <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">TRUE</span>, 
+</span></span><span style="display:flex;"><span>                          event_level <span style="color:#666">=</span> <span style="color:#ba2121">&#34;first&#34;</span>,
+</span></span><span style="display:flex;"><span>                          <span style="color:#008000;font-weight:bold">...</span>) {
+</span></span><span style="display:flex;"><span>  estimator <span style="color:#666">&lt;-</span> <span style="color:#00f">finalize_estimator</span>(truth, estimator)
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  miss_rate_impl <span style="color:#666">&lt;-</span> <span style="color:#00f">function</span>(truth, estimate) {
+</span></span><span style="display:flex;"><span>    <span style="color:#408080;font-style:italic"># Create </span>
+</span></span><span style="display:flex;"><span>    xtab <span style="color:#666">&lt;-</span> <span style="color:#00f">table</span>(estimate, truth)
+</span></span><span style="display:flex;"><span>    col <span style="color:#666">&lt;-</span> <span style="color:#00f">event_col</span>(xtab, event_level)
+</span></span><span style="display:flex;"><span>    col2 <span style="color:#666">&lt;-</span> <span style="color:#00f">setdiff</span>(<span style="color:#00f">colnames</span>(xtab), col)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    tp <span style="color:#666">&lt;-</span> xtab[col, col]
+</span></span><span style="display:flex;"><span>    fn <span style="color:#666">&lt;-</span> xtab[col2, col]
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    fn <span style="color:#666">/</span> (fn <span style="color:#666">+</span> tp)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">metric_vec_template</span>(
+</span></span><span style="display:flex;"><span>    metric_impl <span style="color:#666">=</span> miss_rate_impl,
+</span></span><span style="display:flex;"><span>    truth <span style="color:#666">=</span> truth,
+</span></span><span style="display:flex;"><span>    estimate <span style="color:#666">=</span> estimate,
+</span></span><span style="display:flex;"><span>    na_rm <span style="color:#666">=</span> na_rm,
+</span></span><span style="display:flex;"><span>    cls <span style="color:#666">=</span> <span style="color:#ba2121">&#34;factor&#34;</span>,
+</span></span><span style="display:flex;"><span>    estimator <span style="color:#666">=</span> estimator,
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Another change from the numeric metric is that a call to <code>finalize_estimator()</code> is made. This is the infrastructure that auto-selects the type of estimator to use.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#00f">data</span>(<span style="color:#ba2121">&#34;two_class_example&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#00f">miss_rate_vec</span>(two_class_example<span style="color:#666">$</span>truth, two_class_example<span style="color:#666">$</span>predicted)
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; [1] 0.12</span>
+</span></span></code></pre></div><p>What happens if you try and pass in a multiclass result?</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#00f">data</span>(<span style="color:#ba2121">&#34;hpc_cv&#34;</span>)
+</span></span><span style="display:flex;"><span>fold1 <span style="color:#666">&lt;-</span> <span style="color:#00f">filter</span>(hpc_cv, Resample <span style="color:#666">==</span> <span style="color:#ba2121">&#34;Fold01&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#00f">miss_rate_vec</span>(fold1<span style="color:#666">$</span>obs, fold1<span style="color:#666">$</span>pred)
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;      F      M      L </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 0.0621 0.0000 0.0000</span>
+</span></span></code></pre></div><p>This isn&rsquo;t great, as currently multiclass <code>miss_rate()</code> isn&rsquo;t supported and it would have been better to throw an error if the <code>estimator</code> was not <code>&quot;binary&quot;</code>. Currently, <code>finalize_estimator()</code> uses its default implementation which selected <code>&quot;macro&quot;</code> as the <code>estimator</code> since <code>truth</code> was a factor with more than 2 classes. When we implement multiclass averaging, this is what you want, but if your metric only works with a binary implementation (or has other specialized multiclass versions), you might want to guard against this.</p>
+<p>To fix this, a generic counterpart to <code>finalize_estimator()</code>, called <code>finalize_estimator_internal()</code>, exists that helps you restrict the input types. If you provide a method to <code>finalize_estimator_internal()</code> where the method name is the same as your metric name, and then set the <code>metric_class</code> argument in <code>finalize_estimator()</code> to be the same thing, you can control how the auto-selection of the <code>estimator</code> is handled.</p>
+<p>Don&rsquo;t worry about the <code>metric_dispatcher</code> argument. This is handled for you and just exists as a dummy argument to dispatch off of.</p>
+<p>It is also good practice to call <code>validate_estimator()</code> which handles the case where a user passed in the estimator themselves. This validates that the supplied <code>estimator</code> is one of the allowed types and error otherwise.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>finalize_estimator_internal.miss_rate <span style="color:#666">&lt;-</span> <span style="color:#00f">function</span>(metric_dispatcher, x, estimator) {
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">validate_estimator</span>(estimator, estimator_override <span style="color:#666">=</span> <span style="color:#ba2121">&#34;binary&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">if </span>(<span style="color:#666">!</span><span style="color:#00f">is.null</span>(estimator)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">return</span>(estimator)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  lvls <span style="color:#666">&lt;-</span> <span style="color:#00f">levels</span>(x)
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">if </span>(<span style="color:#00f">length</span>(lvls) <span style="color:#666">&gt;</span> <span style="color:#666">2</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">stop</span>(<span style="color:#ba2121">&#34;A multiclass `truth` input was provided, but only `binary` is supported.&#34;</span>)
+</span></span><span style="display:flex;"><span>  } 
+</span></span><span style="display:flex;"><span>  <span style="color:#ba2121">&#34;binary&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>miss_rate_vec <span style="color:#666">&lt;-</span> <span style="color:#00f">function</span>(truth, 
+</span></span><span style="display:flex;"><span>                          estimate, 
+</span></span><span style="display:flex;"><span>                          estimator <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">NULL</span>, 
+</span></span><span style="display:flex;"><span>                          na_rm <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">TRUE</span>, 
+</span></span><span style="display:flex;"><span>                          event_level <span style="color:#666">=</span> <span style="color:#ba2121">&#34;first&#34;</span>,
+</span></span><span style="display:flex;"><span>                          <span style="color:#008000;font-weight:bold">...</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#408080;font-style:italic"># calls finalize_estimator_internal() internally</span>
+</span></span><span style="display:flex;"><span>  estimator <span style="color:#666">&lt;-</span> <span style="color:#00f">finalize_estimator</span>(truth, estimator, metric_class <span style="color:#666">=</span> <span style="color:#ba2121">&#34;miss_rate&#34;</span>)
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  miss_rate_impl <span style="color:#666">&lt;-</span> <span style="color:#00f">function</span>(truth, estimate) {
+</span></span><span style="display:flex;"><span>    <span style="color:#408080;font-style:italic"># Create </span>
+</span></span><span style="display:flex;"><span>    xtab <span style="color:#666">&lt;-</span> <span style="color:#00f">table</span>(estimate, truth)
+</span></span><span style="display:flex;"><span>    col <span style="color:#666">&lt;-</span> <span style="color:#00f">event_col</span>(xtab, event_level)
+</span></span><span style="display:flex;"><span>    col2 <span style="color:#666">&lt;-</span> <span style="color:#00f">setdiff</span>(<span style="color:#00f">colnames</span>(xtab), col)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    tp <span style="color:#666">&lt;-</span> xtab[col, col]
+</span></span><span style="display:flex;"><span>    fn <span style="color:#666">&lt;-</span> xtab[col2, col]
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    fn <span style="color:#666">/</span> (fn <span style="color:#666">+</span> tp)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">metric_vec_template</span>(
+</span></span><span style="display:flex;"><span>    metric_impl <span style="color:#666">=</span> miss_rate_impl,
+</span></span><span style="display:flex;"><span>    truth <span style="color:#666">=</span> truth,
+</span></span><span style="display:flex;"><span>    estimate <span style="color:#666">=</span> estimate,
+</span></span><span style="display:flex;"><span>    na_rm <span style="color:#666">=</span> na_rm,
+</span></span><span style="display:flex;"><span>    cls <span style="color:#666">=</span> <span style="color:#ba2121">&#34;factor&#34;</span>,
+</span></span><span style="display:flex;"><span>    estimator <span style="color:#666">=</span> estimator,
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># Error thrown by our custom handler</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">miss_rate_vec</span>(fold1<span style="color:#666">$</span>obs, fold1<span style="color:#666">$</span>pred)
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; Error in finalize_estimator_internal.miss_rate(metric_dispatcher, x, estimator): A multiclass `truth` input was provided, but only `binary` is supported.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># Error thrown by validate_estimator()</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">miss_rate_vec</span>(fold1<span style="color:#666">$</span>obs, fold1<span style="color:#666">$</span>pred, estimator <span style="color:#666">=</span> <span style="color:#ba2121">&#34;macro&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; Error in `validate_estimator()`:</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; ! `estimator` must be one of: &#34;binary&#34;. Not &#34;macro&#34;.</span>
+</span></span></code></pre></div><h3 id="supporting-multiclass-miss-rate">Supporting multiclass miss rate</h3>
+<p>Like many other classification metrics such as <code>precision()</code> or <code>recall()</code>, miss rate does not have a natural multiclass extension, but one can be created using methods such as macro, weighted macro, and micro averaging. If you have not, I encourage you to read <code>vignette(&quot;multiclass&quot;, &quot;yardstick&quot;)</code> for more information about how these methods work.</p>
+<p>Generally, they require more effort to get right than the binary case, especially if you want to have a performant version. Luckily, a somewhat standard template is used in yardstick and can be used here as well.</p>
+<p>Let&rsquo;s first remove the &ldquo;binary&rdquo; restriction we created earlier.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#00f">rm</span>(finalize_estimator_internal.miss_rate)
+</span></span></code></pre></div><p>The main changes below are:</p>
+<ul>
+<li>
+<p>The binary implementation is moved to <code>miss_rate_binary()</code>.</p>
+</li>
+<li>
+<p><code>miss_rate_estimator_impl()</code> is a helper function for switching between binary and multiclass implementations. It also applies the weighting required for multiclass estimators. It is called from <code>miss_rate_impl()</code> and also accepts the <code>estimator</code> argument using R&rsquo;s function scoping rules.</p>
+</li>
+<li>
+<p><code>miss_rate_multiclass()</code> provides the implementation for the multiclass case. It calculates the true positive and false negative values as vectors with one value per class. For the macro case, it returns a vector of miss rate calculations, and for micro, it first sums the individual pieces and returns a single miss rate calculation. In the macro case, the vector is then weighted appropriately in <code>miss_rate_estimator_impl()</code> depending on whether or not it was macro or  weighted macro.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>miss_rate_vec <span style="color:#666">&lt;-</span> <span style="color:#00f">function</span>(truth, 
+</span></span><span style="display:flex;"><span>                          estimate, 
+</span></span><span style="display:flex;"><span>                          estimator <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">NULL</span>, 
+</span></span><span style="display:flex;"><span>                          na_rm <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">TRUE</span>, 
+</span></span><span style="display:flex;"><span>                          event_level <span style="color:#666">=</span> <span style="color:#ba2121">&#34;first&#34;</span>,
+</span></span><span style="display:flex;"><span>                          <span style="color:#008000;font-weight:bold">...</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#408080;font-style:italic"># calls finalize_estimator_internal() internally</span>
+</span></span><span style="display:flex;"><span>  estimator <span style="color:#666">&lt;-</span> <span style="color:#00f">finalize_estimator</span>(truth, estimator, metric_class <span style="color:#666">=</span> <span style="color:#ba2121">&#34;miss_rate&#34;</span>)
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  miss_rate_impl <span style="color:#666">&lt;-</span> <span style="color:#00f">function</span>(truth, estimate) {
+</span></span><span style="display:flex;"><span>    xtab <span style="color:#666">&lt;-</span> <span style="color:#00f">table</span>(estimate, truth)
+</span></span><span style="display:flex;"><span>    <span style="color:#408080;font-style:italic"># Rather than implement the actual method here, we rely on</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#408080;font-style:italic"># an *_estimator_impl() function that can handle binary</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#408080;font-style:italic"># and multiclass cases</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">miss_rate_estimator_impl</span>(xtab, estimator, event_level)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">metric_vec_template</span>(
+</span></span><span style="display:flex;"><span>    metric_impl <span style="color:#666">=</span> miss_rate_impl,
+</span></span><span style="display:flex;"><span>    truth <span style="color:#666">=</span> truth,
+</span></span><span style="display:flex;"><span>    estimate <span style="color:#666">=</span> estimate,
+</span></span><span style="display:flex;"><span>    na_rm <span style="color:#666">=</span> na_rm,
+</span></span><span style="display:flex;"><span>    cls <span style="color:#666">=</span> <span style="color:#ba2121">&#34;factor&#34;</span>,
+</span></span><span style="display:flex;"><span>    estimator <span style="color:#666">=</span> estimator,
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># This function switches between binary and multiclass implementations</span>
+</span></span><span style="display:flex;"><span>miss_rate_estimator_impl <span style="color:#666">&lt;-</span> <span style="color:#00f">function</span>(data, estimator, event_level) {
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">if</span>(estimator <span style="color:#666">==</span> <span style="color:#ba2121">&#34;binary&#34;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">miss_rate_binary</span>(data, event_level)
+</span></span><span style="display:flex;"><span>  } else {
+</span></span><span style="display:flex;"><span>    <span style="color:#408080;font-style:italic"># Encapsulates the macro, macro weighted, and micro cases</span>
+</span></span><span style="display:flex;"><span>    wt <span style="color:#666">&lt;-</span> <span style="color:#00f">get_weights</span>(data, estimator)
+</span></span><span style="display:flex;"><span>    res <span style="color:#666">&lt;-</span> <span style="color:#00f">miss_rate_multiclass</span>(data, estimator)
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">weighted.mean</span>(res, wt)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>miss_rate_binary <span style="color:#666">&lt;-</span> <span style="color:#00f">function</span>(data, event_level) {
+</span></span><span style="display:flex;"><span>  col <span style="color:#666">&lt;-</span> <span style="color:#00f">event_col</span>(data, event_level)
+</span></span><span style="display:flex;"><span>  col2 <span style="color:#666">&lt;-</span> <span style="color:#00f">setdiff</span>(<span style="color:#00f">colnames</span>(data), col)
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  tp <span style="color:#666">&lt;-</span> data[col, col]
+</span></span><span style="display:flex;"><span>  fn <span style="color:#666">&lt;-</span> data[col2, col]
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  fn <span style="color:#666">/</span> (fn <span style="color:#666">+</span> tp)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>miss_rate_multiclass <span style="color:#666">&lt;-</span> <span style="color:#00f">function</span>(data, estimator) {
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#408080;font-style:italic"># We need tp and fn for all classes individually</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#408080;font-style:italic"># we can get this by taking advantage of the fact</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#408080;font-style:italic"># that tp + fn = colSums(data)</span>
+</span></span><span style="display:flex;"><span>  tp <span style="color:#666">&lt;-</span> <span style="color:#00f">diag</span>(data)
+</span></span><span style="display:flex;"><span>  tpfn <span style="color:#666">&lt;-</span> <span style="color:#00f">colSums</span>(data)
+</span></span><span style="display:flex;"><span>  fn <span style="color:#666">&lt;-</span> tpfn <span style="color:#666">-</span> tp
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#408080;font-style:italic"># If using a micro estimator, we sum the individual</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#408080;font-style:italic"># pieces before performing the miss rate calculation</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">if </span>(estimator <span style="color:#666">==</span> <span style="color:#ba2121">&#34;micro&#34;</span>) {
+</span></span><span style="display:flex;"><span>    tp <span style="color:#666">&lt;-</span> <span style="color:#00f">sum</span>(tp)
+</span></span><span style="display:flex;"><span>    fn <span style="color:#666">&lt;-</span> <span style="color:#00f">sum</span>(fn)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#408080;font-style:italic"># return the vector </span>
+</span></span><span style="display:flex;"><span>  tp <span style="color:#666">/</span> (tp <span style="color:#666">+</span> fn)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>For the macro case, this separation of weighting from the core implementation might seem strange, but there is good reason for it. Some metrics are combinations of other metrics, and it is nice to be able to reuse code when calculating more complex metrics. For example, <code>f_meas()</code> is a combination of <code>recall()</code> and <code>precision()</code>. When calculating a macro averaged <code>f_meas()</code>, the weighting  must be applied 1 time, at the very end of the calculation. <code>recall_multiclass()</code> and <code>precision_multiclass()</code> are defined similarly to how <code>miss_rate_multiclass()</code> is defined and returns the unweighted vector of calculations. This means we can directly use this in <code>f_meas()</code>, and then weight everything once at the end of that calculation.</p>
+<p>Let&rsquo;s try it out now:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># two class</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">miss_rate_vec</span>(two_class_example<span style="color:#666">$</span>truth, two_class_example<span style="color:#666">$</span>predicted)
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; [1] 0.12</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># multiclass</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">miss_rate_vec</span>(fold1<span style="color:#666">$</span>obs, fold1<span style="color:#666">$</span>pred)
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; [1] 0.548</span>
+</span></span></code></pre></div><h4 id="data-frame-implementation-1">Data frame implementation</h4>
+<p>Luckily, the data frame implementation is as simple as the numeric case, we just need to add an extra <code>estimator</code> argument and pass that through.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>miss_rate <span style="color:#666">&lt;-</span> <span style="color:#00f">function</span>(data, <span style="color:#008000;font-weight:bold">...</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">UseMethod</span>(<span style="color:#ba2121">&#34;miss_rate&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>miss_rate <span style="color:#666">&lt;-</span> <span style="color:#00f">new_class_metric</span>(miss_rate, direction <span style="color:#666">=</span> <span style="color:#ba2121">&#34;minimize&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>miss_rate.data.frame <span style="color:#666">&lt;-</span> <span style="color:#00f">function</span>(data, 
+</span></span><span style="display:flex;"><span>                                 truth, 
+</span></span><span style="display:flex;"><span>                                 estimate, 
+</span></span><span style="display:flex;"><span>                                 estimator <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">NULL</span>, 
+</span></span><span style="display:flex;"><span>                                 na_rm <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">TRUE</span>, 
+</span></span><span style="display:flex;"><span>                                 event_level <span style="color:#666">=</span> <span style="color:#ba2121">&#34;first&#34;</span>,
+</span></span><span style="display:flex;"><span>                                 <span style="color:#008000;font-weight:bold">...</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">metric_summarizer</span>(
+</span></span><span style="display:flex;"><span>    metric_nm <span style="color:#666">=</span> <span style="color:#ba2121">&#34;miss_rate&#34;</span>,
+</span></span><span style="display:flex;"><span>    metric_fn <span style="color:#666">=</span> miss_rate_vec,
+</span></span><span style="display:flex;"><span>    data <span style="color:#666">=</span> data,
+</span></span><span style="display:flex;"><span>    truth <span style="color:#666">=</span> <span style="color:#666">!!</span> <span style="color:#00f">enquo</span>(truth),
+</span></span><span style="display:flex;"><span>    estimate <span style="color:#666">=</span> <span style="color:#666">!!</span> <span style="color:#00f">enquo</span>(estimate), 
+</span></span><span style="display:flex;"><span>    estimator <span style="color:#666">=</span> estimator,
+</span></span><span style="display:flex;"><span>    na_rm <span style="color:#666">=</span> na_rm,
+</span></span><span style="display:flex;"><span>    event_level <span style="color:#666">=</span> event_level,
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># Macro weighted automatically selected</span>
+</span></span><span style="display:flex;"><span>fold1 <span style="color:#666">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">miss_rate</span>(obs, pred)
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # A tibble: 1 × 3</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   .metric   .estimator .estimate</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   &lt;chr&gt;     &lt;chr&gt;          &lt;dbl&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 1 miss_rate macro          0.548</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># Switch to micro</span>
+</span></span><span style="display:flex;"><span>fold1 <span style="color:#666">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">miss_rate</span>(obs, pred, estimator <span style="color:#666">=</span> <span style="color:#ba2121">&#34;micro&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # A tibble: 1 × 3</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   .metric   .estimator .estimate</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   &lt;chr&gt;     &lt;chr&gt;          &lt;dbl&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 1 miss_rate micro          0.726</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># Macro weighted by resample</span>
+</span></span><span style="display:flex;"><span>hpc_cv <span style="color:#666">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">group_by</span>(Resample) <span style="color:#666">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">miss_rate</span>(obs, pred, estimator <span style="color:#666">=</span> <span style="color:#ba2121">&#34;macro_weighted&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # A tibble: 10 × 4</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;    Resample .metric   .estimator     .estimate</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;    &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;              &lt;dbl&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  1 Fold01   miss_rate macro_weighted     0.726</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  2 Fold02   miss_rate macro_weighted     0.712</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  3 Fold03   miss_rate macro_weighted     0.758</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  4 Fold04   miss_rate macro_weighted     0.712</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  5 Fold05   miss_rate macro_weighted     0.712</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  6 Fold06   miss_rate macro_weighted     0.697</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  7 Fold07   miss_rate macro_weighted     0.675</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  8 Fold08   miss_rate macro_weighted     0.721</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  9 Fold09   miss_rate macro_weighted     0.673</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 10 Fold10   miss_rate macro_weighted     0.699</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># Error handling</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">miss_rate</span>(hpc_cv, obs, VF)
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; Error in `dplyr::summarise()`:</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; ! Problem while computing `.estimate = metric_fn(truth = obs,</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   estimate = VF, na_rm = na_rm, event_level = &#34;first&#34;)`.</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; Caused by error in `validate_class()`:</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; ! `estimate` should be a factor but a numeric was supplied.</span>
+</span></span></code></pre></div><h2 id="using-custom-metrics">Using custom metrics</h2>
+<p>The <code>metric_set()</code> function validates that all metric functions are of the same metric type by checking the class of the function. If any metrics are not of the right class, <code>metric_set()</code> fails. By using <code>new_numeric_metric()</code> and <code>new_class_metric()</code> in the above custom metrics, they work out of the box without any additional adjustments.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>numeric_mets <span style="color:#666">&lt;-</span> <span style="color:#00f">metric_set</span>(mse, rmse)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">numeric_mets</span>(solubility_test, solubility, prediction)
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # A tibble: 2 × 3</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   .metric .estimator .estimate</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 1 mse     standard       0.521</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 2 rmse    standard       0.722</span>
+</span></span></code></pre></div><h2 id="session-information">Session information</h2>
+<pre tabindex="0"><code>#&gt; ─ Session info ─────────────────────────────────────────────────────
+#&gt;  setting  value
+#&gt;  version  R version 4.1.2 (2021-11-01)
+#&gt;  os       macOS Monterey 12.3
+#&gt;  system   aarch64, darwin20
+#&gt;  ui       X11
+#&gt;  language (EN)
+#&gt;  collate  en_GB.UTF-8
+#&gt;  ctype    en_GB.UTF-8
+#&gt;  tz       Europe/London
+#&gt;  date     2022-04-11
+#&gt;  pandoc   2.14.0.3 @ /Applications/RStudio.app/Contents/MacOS/pandoc/ (via rmarkdown)
+#&gt; 
+#&gt; ─ Packages ─────────────────────────────────────────────────────────
+#&gt;  package    * version date (UTC) lib source
+#&gt;  broom      * 0.7.12  2022-01-28 [1] CRAN (R 4.1.1)
+#&gt;  dials      * 0.1.1   2022-04-06 [1] CRAN (R 4.1.2)
+#&gt;  dplyr      * 1.0.8   2022-02-08 [1] CRAN (R 4.1.2)
+#&gt;  ggplot2    * 3.3.5   2021-06-25 [1] CRAN (R 4.1.1)
+#&gt;  infer      * 1.0.0   2021-08-13 [1] CRAN (R 4.1.1)
+#&gt;  parsnip    * 0.2.1   2022-03-17 [1] CRAN (R 4.1.1)
+#&gt;  purrr      * 0.3.4   2020-04-17 [1] CRAN (R 4.1.0)
+#&gt;  recipes    * 0.2.0   2022-02-18 [1] CRAN (R 4.1.1)
+#&gt;  rlang      * 1.0.2   2022-03-04 [1] CRAN (R 4.1.1)
+#&gt;  rsample    * 0.1.1   2021-11-08 [1] CRAN (R 4.1.2)
+#&gt;  tibble     * 3.1.6   2021-11-07 [1] CRAN (R 4.1.1)
+#&gt;  tidymodels * 0.2.0   2022-03-19 [1] CRAN (R 4.1.1)
+#&gt;  tune       * 0.2.0   2022-03-19 [1] CRAN (R 4.1.2)
+#&gt;  workflows  * 0.2.6   2022-03-18 [1] CRAN (R 4.1.2)
+#&gt;  yardstick  * 0.0.9   2021-11-22 [1] CRAN (R 4.1.1)
+#&gt; 
+#&gt;  [1] /Library/Frameworks/R.framework/Versions/4.1-arm64/Resources/library
+#&gt; 
+#&gt; ────────────────────────────────────────────────────────────────────
+</code></pre>
+      </div>
+
+
+      <div class="article-footer">
+      
+      <div style="float:left">
+      
+        <div class='itemTitle' align="left" style='font-size:.8em; line-height:2em'>Previous</div>
+        <a href="/learn/develop/models/">How to build a parsnip model</a>
+      
+      </div>
+      
+      
+      <div style="float:right">
+      
+      <div class='itemTitle' align="right" style='font-size:.8em; line-height:2em'>Next</div>
+        <a href="/learn/develop/parameters/">How to create a tuning parameter function</a>
+      
+      </div>
+     </div> 
+
+      </div>
+
+      <div class="column25">
+        <div class="section hideOnMobile">
+          <div class="sectionTitle">Contents</div>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#numeric-example-mse">Numeric example: MSE</a></li>
+    <li><a href="#class-example-miss-rate">Class example: miss rate</a></li>
+    <li><a href="#using-custom-metrics">Using custom metrics</a></li>
+    <li><a href="#session-information">Session information</a></li>
+  </ul>
+</nav>
+        </div>
+      
+        <div class="section">
+          <div class="sectionTitle">Resources</div>
+          
+
+
+
+
+<div class="event">
+  
+  <div class="eventTitle">
+    <a href="/find/"><i class="fas fa-search fa-xs"></i>&nbsp;&nbsp;Find</a>
+  </div>
+  <div class="eventDetails">Explore searchable tables of all tidymodels packages and functions.</div>
+</div>
+
+
+
+
+
+
+<div class="event">
+  
+  <div class="eventTitle">
+    <a href="/books/"><i class="fas fa-book-open fa-xs"></i>&nbsp;&nbsp;Books</a>
+  </div>
+  <div class="eventDetails">Study up on statistics and modeling with our comprehensive books.</div>
+</div>
+
+
+
+
+
+
+<div class="event">
+  
+  <div class="eventTitle">
+    <a href="https://www.tidyverse.org/tags/tidymodels/" target="_blank"><i class="fas fa-bullhorn fa-xs"></i>&nbsp;&nbsp;News</a>
+  </div>
+  <div class="eventDetails">Hear the latest about tidymodels packages at the <a href="https://www.tidyverse.org/tags/tidymodels/">tidyverse blog</a>.</div>
+</div>
+
+
+
+        </div>
+      </div>
+      
+
+
+    </div>
+  </div>  
+</div> 
+
+
+        <div id="rStudioFooter" class="band">
+          <div class="bandContent">
+            <div id="copyright">
+              
+              
+              Proudly supported by <a class="rstudioLogo" href="https://www.rstudio.com/"></a>
+              
+            </div>
+            <div id="logos">
+              
+              
+            </div>
+            
+            <span class="float-right" aria-hidden="true">
+              <a href="#" class="back-to-top">
+                <span class="button_icon">
+                  <i class="fas fa-chevron-up fa-2x"></i>
+                </span>
+              </a>
+            </span>
+            
+          </div>
+        </div>
+
+      </div>  
+    </div>  
+
+    
+
+    
+<script src="/js/math-code.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});
+</script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-20375833-29', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  </body>
+</html>
+
+</body>
+</html>

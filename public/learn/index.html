@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!DOCTYPE html>
+<html lang="en-us">
+
+
+
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/main-site.css">
+<link rel="stylesheet" href="/css/fa5-all.css">
+<style type="text/css">
+    body {
+	background-color: #ffffff;
+	color: #404040
+}
+
+/* Links */
+
+a {
+  color: #CA225E;
+}
+
+a:hover {
+  color: #cc3168;
+}
+
+/* Landing page content bands */
+
+#homeContent .band.first {
+  background-color: #ffffff
+}
+
+#homeContent .band.second {
+  background-color: #fcfcfc
+}
+
+#homeContent .band.third {
+  background-color: #ffffff
+}
+
+/* Top navigation bar menu */
+
+#rStudioHeader {
+  background-color: #ffffff;
+  color: black;
+}
+
+#rStudioHeader .productName {
+  color: #CA225E
+}
+
+#rStudioHeader .productName:hover {
+  color: #00000075
+}
+
+#rStudioHeader #menu .menuItem.a {
+  background-color: #75aadb;
+  color: black;
+}
+
+#rStudioHeader #menu .menuItem:hover {
+  background-color: white;
+  color: #CA225E;
+}
+
+#rStudioHeader #menu .menuItem.current {
+  background-color: #fcfcfc;
+  color: #CA225E;
+  text-decoration: none;
+}
+
+/* Footer */
+
+#rStudioFooter.band {
+  background-color: #CA225E40;
+}
+
+#rStudioFooter .bandContent #copyright {
+  color: #CA225E;
+}
+
+/* Tables */
+
+table tbody tr:nth-child(even){
+  background-color: #fcfcfc;
+}
+
+table tbody tr:nth-child(odd){
+  background-color: #1a162d10;
+}
+
+.latest {
+  border-top: .5em solid <no value>;
+}
+</style>
+
+  <link rel="stylesheet" href="/css/tm.css">
+
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<meta name="og:image" content="https://www.tidymodels.org/images/feature_summary_large_image.jpg" >
+
+  <meta property="twitter:card" content="summary_large_image">
+
+<meta name="twitter:image" content="https://www.tidymodels.org/images/feature_summary_large_image.jpg" ><meta name="generator" content="Hugo 0.96.0" />
+
+<meta property="og:type" content="website"><title>Learn</title>
+    <meta property="og:title" content="Learn">
+    
+    
+    <meta property="description" content="Learn how to go farther with tidymodels in your modeling and machine learning projects.">
+    <meta property="og:description" content="Learn how to go farther with tidymodels in your modeling and machine learning projects.">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png" />
+<link rel="manifest" href="/images/favicons/site.webmanifest" />
+<link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" />
+<link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" href="/images/favicons/browserconfig.xml" >
+
+
+
+<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/js/site.js"></script>
+
+
+  <script type="text/javascript" src="/js/tm.js"></script>
+
+
+<link rel="icon" href="/images/favicon.ico" />
+
+
+<script defer data-domain="tidymodels.org,all.tidymodels.org" src="https://plausible.io/js/plausible.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
+
+
+
+  <body>
+    <div id="appTidyverseSite" class="shrinkHeader alwaysShrinkHeader">
+      <div id="main">
+        
+        <div id="rStudioHeader">
+          <div class="band">
+            <div class="innards bandContent">
+              <div>
+                <a class="productName" href="/">Tidymodels</a>
+                
+              </div>
+              <div id="menu">
+  <div id="menuToggler"></div>
+  <div id="menuItems" class="">
+    
+    
+      
+      
+      
+    <a class="menuItem " href="/packages/">Packages</a>
+    
+      
+      
+      
+    <a class="menuItem " href="/start/">Get Started</a>
+    
+      
+      
+      
+    <a class="menuItem current" href="/learn/">Learn</a>
+    
+      
+      
+      
+    <a class="menuItem " href="/help/">Help</a>
+    
+      
+      
+      
+    <a class="menuItem " href="/contribute/">Contribute</a>
+    
+      
+      
+      
+    <a class="menuItem " href="/find/"><i class="fas fa-search fa-lg"></i> </a>
+    
+      
+      
+      
+    <a class="menuItem " href="https://github.com/tidymodels/"><i class="fab fa-github fa-lg"></i></a>
+    
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+</head>
+<body>
+
+
+ 
+
+
+<div class="band padForHeader pushFooter">
+  <div class="bandContent">
+    <div class="full splitColumns withMobileMargins">
+      <div class="column75 learn-list">
+        <div class="sectionTitle">
+          <h1 class="article-title">Learn</h1>
+        </div>
+        
+          <p>After you know <a href="/start/">what you need to get started</a> with tidymodels, you can learn more and go further. Find articles here to help you solve specific problems using the tidymodels framework. Articles are organized into four categories:</p>
+
+          
+          <div class="listItem learn-top-nav">
+            <ul>
+            
+              <li>
+                <a class="learn-top-nav-item" href="#perform-statistical-analysis">Perform statistical analysis</a>
+              </li>
+            
+              <li>
+                <a class="learn-top-nav-item" href="#create-robust-models">Create robust models</a>
+              </li>
+            
+              <li>
+                <a class="learn-top-nav-item" href="#tune-compare-and-work-with-your-models">Tune, compare, and work with your models</a>
+              </li>
+            
+              <li>
+                <a class="learn-top-nav-item" href="#develop-custom-modeling-tools">Develop custom modeling tools</a>
+              </li>
+            
+            </ul>
+          </div>
+        
+        
+        <div>
+              
+              
+        
+          <div class="listItem anchor-container">
+            <div class="anchor" style="top: -100px; position: absolute;" id="perform-statistical-analysis"></div>
+            <div class="itemDetails">
+              <div class="itemHeader">
+                <div class="itemTitle">
+                  <a href="#perform-statistical-analysis">Perform statistical analysis</a>
+                </div>
+                
+                
+                
+              </div>
+              
+              <div class="itemMeta">
+                <div class="flex-container learn-list">
+                  
+                  
+                  <div class="image-container learn-list">
+                    <div class="image-cropper">
+                      
+                        
+                        <img class="circle-thumbnail" src="/learn/statistics/thumbnail.png">
+                         
+                    </div>
+                  </div>
+                  
+                 <div class="author article-content learn-list">
+                    <ul>
+                    
+                    
+                        <li>
+                        <a class="article-title" href="https://www.tidymodels.org/learn/statistics/tidy-analysis/">Correlation and regression fundamentals with tidy data principles</a>
+                        
+                        <br> <p class="learning-objective-text"><em>Analyze the results of correlation tests and simple regression models for many data sets at once.</em></p>
+                      
+                    </li>
+                    
+                        <li>
+                        <a class="article-title" href="https://www.tidymodels.org/learn/statistics/k-means/">K-means clustering with tidy data principles</a>
+                        
+                        <br> <p class="learning-objective-text"><em>Summarize clustering characteristics and estimate the best number of clusters for a data set.</em></p>
+                      
+                    </li>
+                    
+                        <li>
+                        <a class="article-title" href="https://www.tidymodels.org/learn/statistics/bootstrap/">Bootstrap resampling and tidy regression models</a>
+                        
+                        <br> <p class="learning-objective-text"><em>Apply bootstrap resampling to estimate uncertainty in model parameters.</em></p>
+                      
+                    </li>
+                    
+                        <li>
+                        <a class="article-title" href="https://www.tidymodels.org/learn/statistics/infer/">Hypothesis testing using resampling and tidy data</a>
+                        
+                        <br> <p class="learning-objective-text"><em>Perform common hypothesis tests for statistical inference using flexible functions.</em></p>
+                      
+                    </li>
+                    
+                        <li>
+                        <a class="article-title" href="https://www.tidymodels.org/learn/statistics/xtabs/">Statistical analysis of contingency tables</a>
+                        
+                        <br> <p class="learning-objective-text"><em>Use tests of independence and goodness of fit to analyze tables of counts.</em></p>
+                      
+                    </li>
+                    
+                  </ul>
+                  <div class="itemDescription learn-list">
+                    <a class="readMore" href="/learn/statistics/">See all &#187;</a>
+                  </div>
+                </div>
+              </div>
+              
+                <div class="itemDate">
+                  <div class="created">
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+              
+              
+        
+          <div class="listItem anchor-container">
+            <div class="anchor" style="top: -100px; position: absolute;" id="create-robust-models"></div>
+            <div class="itemDetails">
+              <div class="itemHeader">
+                <div class="itemTitle">
+                  <a href="#create-robust-models">Create robust models</a>
+                </div>
+                
+                
+                 
+                <div class="itemTag" aria-hidden="true">
+                  <a href="#" class="back-to-top">
+                    <span class="button_icon">
+                      <i class="fas fa-chevron-up fa"></i>
+                    </span>
+                    back to top
+                  </a>
+                </div>
+                
+              </div>
+              
+              <div class="itemMeta">
+                <div class="flex-container learn-list">
+                  
+                  
+                  <div class="image-container learn-list">
+                    <div class="image-cropper">
+                      
+                        
+                        <img class="circle-thumbnail" src="/learn/models/thumbnail.png">
+                         
+                    </div>
+                  </div>
+                  
+                 <div class="author article-content learn-list">
+                    <ul>
+                    
+                    
+                        <li>
+                        <a class="article-title" href="https://www.tidymodels.org/learn/models/parsnip-ranger-glmnet/">Regression models two ways</a>
+                        
+                        <br> <p class="learning-objective-text"><em>Create and train different kinds of regression models with different computational engines.</em></p>
+                      
+                    </li>
+                    
+                        <li>
+                        <a class="article-title" href="https://www.tidymodels.org/learn/models/parsnip-nnet/">Classification models using a neural network</a>
+                        
+                        <br> <p class="learning-objective-text"><em>Train a classification model and evaluate its performance.</em></p>
+                      
+                    </li>
+                    
+                        <li>
+                        <a class="article-title" href="https://www.tidymodels.org/learn/models/sub-sampling/">Subsampling for class imbalances</a>
+                        
+                        <br> <p class="learning-objective-text"><em>Improve model performance in imbalanced data sets through undersampling or oversampling.</em></p>
+                      
+                    </li>
+                    
+                        <li>
+                        <a class="article-title" href="https://www.tidymodels.org/learn/models/time-series/">Modeling time series with tidy resampling</a>
+                        
+                        <br> <p class="learning-objective-text"><em>Calculate performance estimates for time series forecasts using resampling.</em></p>
+                      
+                    </li>
+                    
+                        <li>
+                        <a class="article-title" href="https://www.tidymodels.org/learn/models/coefficients/">Working with model coefficients</a>
+                        
+                        <br> <p class="learning-objective-text"><em>Create models that use coefficients, extract them from fitted models, and visualize them.</em></p>
+                      
+                    </li>
+                    
+                  </ul>
+                  <div class="itemDescription learn-list">
+                    <a class="readMore" href="/learn/models/">See all &#187;</a>
+                  </div>
+                </div>
+              </div>
+              
+                <div class="itemDate">
+                  <div class="created">
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+              
+              
+        
+          <div class="listItem anchor-container">
+            <div class="anchor" style="top: -100px; position: absolute;" id="tune-compare-and-work-with-your-models"></div>
+            <div class="itemDetails">
+              <div class="itemHeader">
+                <div class="itemTitle">
+                  <a href="#tune-compare-and-work-with-your-models">Tune, compare, and work with your models</a>
+                </div>
+                
+                
+                 
+                <div class="itemTag" aria-hidden="true">
+                  <a href="#" class="back-to-top">
+                    <span class="button_icon">
+                      <i class="fas fa-chevron-up fa"></i>
+                    </span>
+                    back to top
+                  </a>
+                </div>
+                
+              </div>
+              
+              <div class="itemMeta">
+                <div class="flex-container learn-list">
+                  
+                  
+                  <div class="image-container learn-list">
+                    <div class="image-cropper">
+                      
+                        
+                        <img class="circle-thumbnail" src="/learn/work/thumbnail.png">
+                         
+                    </div>
+                  </div>
+                  
+                 <div class="author article-content learn-list">
+                    <ul>
+                    
+                    
+                        <li>
+                        <a class="article-title" href="https://www.tidymodels.org/learn/work/tune-svm/">Model tuning via grid search</a>
+                        
+                        <br> <p class="learning-objective-text"><em>Choose hyperparameters for a model by training on a grid of many possible parameter values.</em></p>
+                      
+                    </li>
+                    
+                        <li>
+                        <a class="article-title" href="https://www.tidymodels.org/learn/work/nested-resampling/">Nested resampling</a>
+                        
+                        <br> <p class="learning-objective-text"><em>Estimate the best hyperparameters for a model using nested resampling.</em></p>
+                      
+                    </li>
+                    
+                        <li>
+                        <a class="article-title" href="https://www.tidymodels.org/learn/work/bayes-opt/">Iterative Bayesian optimization of a classification model</a>
+                        
+                        <br> <p class="learning-objective-text"><em>Identify the best hyperparameters for a model using Bayesian optimization of iterative search.</em></p>
+                      
+                    </li>
+                    
+                        <li>
+                        <a class="article-title" href="https://www.tidymodels.org/learn/work/tune-text/">Tuning text models</a>
+                        
+                        <br> <p class="learning-objective-text"><em>Prepare text data for predictive modeling and tune with both grid and iterative search.</em></p>
+                      
+                    </li>
+                    
+                        <li>
+                        <a class="article-title" href="https://www.tidymodels.org/learn/work/case-weights/">Creating case weights based on time</a>
+                        
+                        <br> <p class="learning-objective-text"><em>Create models that use coefficients, extract them from fitted models, and visualize them.</em></p>
+                      
+                    </li>
+                    
+                  </ul>
+                  <div class="itemDescription learn-list">
+                    <a class="readMore" href="/learn/work/">See all &#187;</a>
+                  </div>
+                </div>
+              </div>
+              
+                <div class="itemDate">
+                  <div class="created">
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+              
+              
+        
+          <div class="listItem anchor-container">
+            <div class="anchor" style="top: -100px; position: absolute;" id="develop-custom-modeling-tools"></div>
+            <div class="itemDetails">
+              <div class="itemHeader">
+                <div class="itemTitle">
+                  <a href="#develop-custom-modeling-tools">Develop custom modeling tools</a>
+                </div>
+                
+                
+                 
+                <div class="itemTag" aria-hidden="true">
+                  <a href="#" class="back-to-top">
+                    <span class="button_icon">
+                      <i class="fas fa-chevron-up fa"></i>
+                    </span>
+                    back to top
+                  </a>
+                </div>
+                
+              </div>
+              
+              <div class="itemMeta">
+                <div class="flex-container learn-list">
+                  
+                  
+                  <div class="image-container learn-list">
+                    <div class="image-cropper">
+                      
+                        
+                        <img class="circle-thumbnail" src="/learn/develop/thumbnail.png">
+                         
+                    </div>
+                  </div>
+                  
+                 <div class="author article-content learn-list">
+                    <ul>
+                    
+                    
+                        <li>
+                        <a class="article-title" href="https://www.tidymodels.org/learn/develop/recipes/">Create your own recipe step function</a>
+                        
+                        <br> <p class="learning-objective-text"><em>Write a new recipe step for data preprocessing.</em></p>
+                      
+                    </li>
+                    
+                        <li>
+                        <a class="article-title" href="https://www.tidymodels.org/learn/develop/models/">How to build a parsnip model</a>
+                        
+                        <br> <p class="learning-objective-text"><em>Create a parsnip model function from an existing model implementation.</em></p>
+                      
+                    </li>
+                    
+                        <li>
+                        <a class="article-title" href="https://www.tidymodels.org/learn/develop/metrics/">Custom performance metrics</a>
+                        
+                        <br> <p class="learning-objective-text"><em>Create a new performance metric and integrate it with yardstick functions.</em></p>
+                      
+                    </li>
+                    
+                        <li>
+                        <a class="article-title" href="https://www.tidymodels.org/learn/develop/parameters/">How to create a tuning parameter function</a>
+                        
+                        <br> <p class="learning-objective-text"><em>Build functions to use in tuning both quantitative and qualitative parameters.</em></p>
+                      
+                    </li>
+                    
+                        <li>
+                        <a class="article-title" href="https://www.tidymodels.org/learn/develop/broom/">Create your own broom tidier methods</a>
+                        
+                        <br> <p class="learning-objective-text"><em>Write tidy(), glance(), and augment() methods for new model objects.</em></p>
+                      
+                    </li>
+                    
+                  </ul>
+                  <div class="itemDescription learn-list">
+                    <a class="readMore" href="/learn/develop/">See all &#187;</a>
+                  </div>
+                </div>
+              </div>
+              
+                <div class="itemDate">
+                  <div class="created">
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column25">
+        <div class="section">
+          <div class="sectionTitle">Filter by package</div>
+          
+          <div class="articleCategory broom">
+            <a href="/tags/broom">broom (7)</a>
+          </div>
+          
+          <div class="articleCategory dials">
+            <a href="/tags/dials">dials (3)</a>
+          </div>
+          
+          <div class="articleCategory discrim">
+            <a href="/tags/discrim">discrim (1)</a>
+          </div>
+          
+          <div class="articleCategory infer">
+            <a href="/tags/infer">infer (2)</a>
+          </div>
+          
+          <div class="articleCategory parsnip">
+            <a href="/tags/parsnip">parsnip (16)</a>
+          </div>
+          
+          <div class="articleCategory recipes">
+            <a href="/tags/recipes">recipes (8)</a>
+          </div>
+          
+          <div class="articleCategory rsample">
+            <a href="/tags/rsample">rsample (12)</a>
+          </div>
+          
+          <div class="articleCategory spatialsample">
+            <a href="/tags/spatialsample">spatialsample (1)</a>
+          </div>
+          
+          <div class="articleCategory textrecipes">
+            <a href="/tags/textrecipes">textrecipes (1)</a>
+          </div>
+          
+          <div class="articleCategory themis">
+            <a href="/tags/themis">themis (1)</a>
+          </div>
+          
+          <div class="articleCategory tune">
+            <a href="/tags/tune">tune (8)</a>
+          </div>
+          
+          <div class="articleCategory workflows">
+            <a href="/tags/workflows">workflows (7)</a>
+          </div>
+          
+          <div class="articleCategory yardstick">
+            <a href="/tags/yardstick">yardstick (6)</a>
+          </div>
+          
+        </div>
+      </div>
+
+
+    </div>
+    <p class="icon-attribution">Icons made by <a href="https://www.flaticon.com/authors/becris">Becris</a> from <a href="https://www.flaticon.com">www.flaticon.com</a></p>
+  </div>  
+</div> 
+
+
+        <div id="rStudioFooter" class="band">
+          <div class="bandContent">
+            <div id="copyright">
+              
+              
+              Proudly supported by <a class="rstudioLogo" href="https://www.rstudio.com/"></a>
+              
+            </div>
+            <div id="logos">
+              
+              
+            </div>
+            
+            <span class="float-right" aria-hidden="true">
+              <a href="#" class="back-to-top">
+                <span class="button_icon">
+                  <i class="fas fa-chevron-up fa-2x"></i>
+                </span>
+              </a>
+            </span>
+            
+          </div>
+        </div>
+
+      </div>  
+    </div>  
+
+    
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-20375833-29', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  </body>
+</html>
+
+</body>
+</html>

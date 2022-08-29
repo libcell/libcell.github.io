@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!DOCTYPE html>
+<html lang="en-us">
+
+
+
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/main-site.css">
+<link rel="stylesheet" href="/css/fa5-all.css">
+<style type="text/css">
+    body {
+	background-color: #ffffff;
+	color: #404040
+}
+
+/* Links */
+
+a {
+  color: #CA225E;
+}
+
+a:hover {
+  color: #cc3168;
+}
+
+/* Landing page content bands */
+
+#homeContent .band.first {
+  background-color: #ffffff
+}
+
+#homeContent .band.second {
+  background-color: #fcfcfc
+}
+
+#homeContent .band.third {
+  background-color: #ffffff
+}
+
+/* Top navigation bar menu */
+
+#rStudioHeader {
+  background-color: #ffffff;
+  color: black;
+}
+
+#rStudioHeader .productName {
+  color: #CA225E
+}
+
+#rStudioHeader .productName:hover {
+  color: #00000075
+}
+
+#rStudioHeader #menu .menuItem.a {
+  background-color: #75aadb;
+  color: black;
+}
+
+#rStudioHeader #menu .menuItem:hover {
+  background-color: white;
+  color: #CA225E;
+}
+
+#rStudioHeader #menu .menuItem.current {
+  background-color: #fcfcfc;
+  color: #CA225E;
+  text-decoration: none;
+}
+
+/* Footer */
+
+#rStudioFooter.band {
+  background-color: #CA225E40;
+}
+
+#rStudioFooter .bandContent #copyright {
+  color: #CA225E;
+}
+
+/* Tables */
+
+table tbody tr:nth-child(even){
+  background-color: #fcfcfc;
+}
+
+table tbody tr:nth-child(odd){
+  background-color: #1a162d10;
+}
+
+.latest {
+  border-top: .5em solid <no value>;
+}
+</style>
+
+  <link rel="stylesheet" href="/css/tm.css">
+
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<meta name="og:image" content="https://www.tidymodels.org/images/feature_summary_large_image.jpg" >
+
+  <meta property="twitter:card" content="summary_large_image">
+
+<meta name="twitter:image" content="https://www.tidymodels.org/images/feature_summary_large_image.jpg" ><meta name="generator" content="Hugo 0.96.0" />
+
+<meta property="og:type" content="website"><title>Get Started - A predictive modeling case study</title>
+    <meta property="og:title" content="Get Started - A predictive modeling case study">
+    
+    
+    
+    
+    <meta property="description" content="Develop, from beginning to end, a predictive model using best practices.
+">
+    <meta property="og:description" content="Develop, from beginning to end, a predictive model using best practices.
+">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png" />
+<link rel="manifest" href="/images/favicons/site.webmanifest" />
+<link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" />
+<link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" href="/images/favicons/browserconfig.xml" >
+
+
+
+<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/js/site.js"></script>
+
+
+  <script type="text/javascript" src="/js/tm.js"></script>
+
+
+<link rel="icon" href="/images/favicon.ico" />
+
+
+<script defer data-domain="tidymodels.org,all.tidymodels.org" src="https://plausible.io/js/plausible.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
+
+
+
+  <body>
+    <div id="appTidyverseSite" class="shrinkHeader alwaysShrinkHeader">
+      <div id="main">
+        
+        <div id="rStudioHeader">
+          <div class="band">
+            <div class="innards bandContent">
+              <div>
+                <a class="productName" href="/">Tidymodels</a>
+                
+              </div>
+              <div id="menu">
+  <div id="menuToggler"></div>
+  <div id="menuItems" class="">
+    
+    
+      
+      
+      
+    <a class="menuItem " href="/packages/">Packages</a>
+    
+      
+      
+      
+    <a class="menuItem current" href="/start/">Get Started</a>
+    
+      
+      
+      
+    <a class="menuItem " href="/learn/">Learn</a>
+    
+      
+      
+      
+    <a class="menuItem " href="/help/">Help</a>
+    
+      
+      
+      
+    <a class="menuItem " href="/contribute/">Contribute</a>
+    
+      
+      
+      
+    <a class="menuItem " href="/find/"><i class="fas fa-search fa-lg"></i> </a>
+    
+      
+      
+      
+    <a class="menuItem " href="https://github.com/tidymodels/"><i class="fab fa-github fa-lg"></i></a>
+    
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+</head>
+<body>
+
+
+ 
+
+
+
+
+<div class="band padForHeader pushFooter">
+  <div class="bandContent">
+    <div class="full splitColumns withMobileMargins">
+
+      
+<div class="column25-left hideOnMobile">
+  <div class="section">
+    <div class="section">
+      <div class="start sectionTitle">
+          
+          <a class = "sectionTitle " href="/start/">
+          Get Started
+          
+          </a>
+      </div>
+    </div>
+  
+    <div class="section">
+        <div class="sectionTitle">1&nbsp&nbsp<a class = "sectionTitle " href="/start/models/">Build a model</a>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="sectionTitle">2&nbsp&nbsp<a class = "sectionTitle " href="/start/recipes/">Preprocess your data with recipes</a>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="sectionTitle">3&nbsp&nbsp<a class = "sectionTitle " href="/start/resampling/">Evaluate your model with resampling</a>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="sectionTitle">4&nbsp&nbsp<a class = "sectionTitle " href="/start/tuning/">Tune model parameters</a>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="sectionTitle">5&nbsp&nbsp<a class = "sectionTitle current" href="/start/case-study/">A predictive modeling case study</a>
+        </div>
+    </div>
+    
+  </div>
+  
+   
+  
+    <a class="help-link" href="https://www.tidymodels.org/help/" ><div class="help"> Stuck? Confused? Ask for help. </div></a>
+
+  
+
+</div>
+
+      
+      <div class="column75">
+
+      <h1 class="article-title">5&nbsp;&nbsp;&nbsp;A predictive modeling case study</h1>
+      
+      <div class="tags-list">
+      <i class="fas fa-box-open" style="color:#1a162dde;"></i>&nbsp;
+      <h1 class="learning-objective">Tidymodels packages: </h1>
+      
+        <a href="https://www.tidymodels.org/tags/parsnip/">parsnip</a>, 
+        <a href="https://www.tidymodels.org/tags/recipes/">recipes</a>, 
+        <a href="https://www.tidymodels.org/tags/rsample/">rsample</a>, 
+        <a href="https://www.tidymodels.org/tags/workflows/">workflows</a>, 
+        <a href="https://www.tidymodels.org/tags/tune/">tune</a></div>
+        
+      <div class="section">
+        <div class="listItem learn-top-nav">
+          <div class="tutorial"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#intro">Introduction</a></li>
+    <li><a href="#data">The Hotel Bookings Data</a></li>
+    <li><a href="#data-split">Data Splitting &amp; Resampling</a></li>
+    <li><a href="#first-model">A first model: penalized logistic regression</a></li>
+    <li><a href="#second-model">A second model: tree-based ensemble</a></li>
+    <li><a href="#last-fit">The last fit</a></li>
+    <li><a href="#next">Where to next?</a></li>
+    <li><a href="#session-information">Session information</a></li>
+  </ul>
+</nav></div>
+        </div>
+      </div>
+      
+      <div class="article-content">
+      <h2 id="intro">Introduction&nbsp;<a class="hanchor" ariaLabel="Anchor" href="#intro">🔗&#xFE0E;</a> </h2>
+<p>Each of the four previous <a href="/start/"><em>Get Started</em></a> articles has focused on a single task related to modeling. Along the way, we also introduced core packages in the tidymodels ecosystem and some of the key functions you&rsquo;ll need to start working with models. In this final case study, we will use all of the previous articles as a foundation to build a predictive model from beginning to end with data on hotel stays.</p>
+<img src="img/hotel.jpg" width="90%" />
+<p>To use code in this article,  you will need to install the following packages: glmnet, ranger, readr, tidymodels, and vip.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#00f">library</span>(tidymodels)  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># Helper packages</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">library</span>(readr)       <span style="color:#408080;font-style:italic"># for importing data</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">library</span>(vip)         <span style="color:#408080;font-style:italic"># for variable importance plots</span>
+</span></span></code></pre></div><p> Alternatively, open an interactive version of this article in your browser: </p>
+
+<a href="https://rstudio.cloud/project/2674862">
+  <button class="test-drive-btn"><i class="fa fa-cloud"></i> Test Drive on RStudio Cloud</button>
+</a>
+
+<h2 id="data">The Hotel Bookings Data&nbsp;<a class="hanchor" ariaLabel="Anchor" href="#data">🔗&#xFE0E;</a> </h2>
+<p>Let’s use hotel bookings data from <a href="https://doi.org/10.1016/j.dib.2018.11.126">Antonio, Almeida, and Nunes (2019)</a> to predict which hotel stays included children and/or babies, based on the other characteristics of the stays such as which hotel the guests stay at, how much they pay, etc. This was also a <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-02-11"><code>#TidyTuesday</code></a> dataset with a <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-02-11#data-dictionary">data dictionary</a> you may want to look over to learn more about the variables. We&rsquo;ll use a slightly <a href="https://gist.github.com/topepo/05a74916c343e57a71c51d6bc32a21ce">edited version of the dataset</a> for this case study.</p>
+<p>To start, let&rsquo;s read our hotel data into R, which we&rsquo;ll do by providing <a href="https://readr.tidyverse.org/reference/read_delim.html"><code>readr::read_csv()</code></a> with a url where our CSV data is located (&quot;<a href="https://tidymodels.org/start/case-study/hotels.csv">https://tidymodels.org/start/case-study/hotels.csv</a>&quot;):</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#00f">library</span>(tidymodels)
+</span></span><span style="display:flex;"><span><span style="color:#00f">library</span>(readr)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hotels <span style="color:#666">&lt;-</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">read_csv</span>(<span style="color:#ba2121">&#39;https://tidymodels.org/start/case-study/hotels.csv&#39;</span>) <span style="color:#666">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">mutate</span>(<span style="color:#00f">across</span>(<span style="color:#00f">where</span>(is.character), as.factor))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">dim</span>(hotels)
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; [1] 50000    23</span>
+</span></span></code></pre></div><p>In the original paper, the <a href="https://doi.org/10.1016/j.dib.2018.11.126">authors</a> caution that the distribution of many variables (such as number of adults/children, room type, meals bought, country of origin of the guests, and so forth) is different for hotel stays that were canceled versus not canceled. This makes sense because much of that information is gathered (or gathered again more accurately) when guests check in for their stay, so canceled bookings are likely to have more missing data than non-canceled bookings, and/or to have different characteristics when data is not missing. Given this, it is unlikely that we can reliably detect meaningful differences between guests who cancel their bookings and those who do not with this dataset. To build our models here, we have already filtered the data to include only the bookings that did not cancel, so we&rsquo;ll be analyzing <em>hotel stays</em> only.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#00f">glimpse</span>(hotels)
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; Rows: 50,000</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; Columns: 23</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ hotel                          &lt;fct&gt; City_Hotel, City_Hotel, Resort_Hotel, R…</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ lead_time                      &lt;dbl&gt; 217, 2, 95, 143, 136, 67, 47, 56, 80, 6…</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ stays_in_weekend_nights        &lt;dbl&gt; 1, 0, 2, 2, 1, 2, 0, 0, 0, 2, 1, 0, 1, …</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ stays_in_week_nights           &lt;dbl&gt; 3, 1, 5, 6, 4, 2, 2, 3, 4, 2, 2, 1, 2, …</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ adults                         &lt;dbl&gt; 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 1, 2, …</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ children                       &lt;fct&gt; none, none, none, none, none, none, chi…</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ meal                           &lt;fct&gt; BB, BB, BB, HB, HB, SC, BB, BB, BB, BB,…</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ country                        &lt;fct&gt; DEU, PRT, GBR, ROU, PRT, GBR, ESP, ESP,…</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ market_segment                 &lt;fct&gt; Offline_TA/TO, Direct, Online_TA, Onlin…</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ distribution_channel           &lt;fct&gt; TA/TO, Direct, TA/TO, TA/TO, Direct, TA…</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ is_repeated_guest              &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ previous_cancellations         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ previous_bookings_not_canceled &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ reserved_room_type             &lt;fct&gt; A, D, A, A, F, A, C, B, D, A, A, D, A, …</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ assigned_room_type             &lt;fct&gt; A, K, A, A, F, A, C, A, D, A, D, D, A, …</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ booking_changes                &lt;dbl&gt; 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ deposit_type                   &lt;fct&gt; No_Deposit, No_Deposit, No_Deposit, No_…</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ days_in_waiting_list           &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ customer_type                  &lt;fct&gt; Transient-Party, Transient, Transient, …</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ average_daily_rate             &lt;dbl&gt; 80.75, 170.00, 8.00, 81.00, 157.60, 49.…</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ required_car_parking_spaces    &lt;fct&gt; none, none, none, none, none, none, non…</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ total_of_special_requests      &lt;dbl&gt; 1, 3, 2, 1, 4, 1, 1, 1, 1, 1, 0, 1, 0, …</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; $ arrival_date                   &lt;date&gt; 2016-09-01, 2017-08-25, 2016-11-19, 20…</span>
+</span></span></code></pre></div><p>We will build a model to predict which actual hotel stays included children and/or babies, and which did not. Our outcome variable <code>children</code> is a factor variable with two levels:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>hotels <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">count</span>(children) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">mutate</span>(prop <span style="color:#666">=</span> n<span style="color:#666">/</span><span style="color:#00f">sum</span>(n))
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # A tibble: 2 × 3</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   children     n   prop</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   &lt;fct&gt;    &lt;int&gt;  &lt;dbl&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 1 children  4038 0.0808</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 2 none     45962 0.919</span>
+</span></span></code></pre></div><p>We can see that children were only in 8.1% of the reservations. This type of class imbalance can often wreak havoc on an analysis. While there are several methods for combating this issue using <a href="/find/recipes/">recipes</a> (search for steps to <code>upsample</code> or <code>downsample</code>) or other more specialized packages like <a href="https://themis.tidymodels.org/">themis</a>, the analyses shown below analyze the data as-is.</p>
+<h2 id="data-split">Data Splitting &amp; Resampling&nbsp;<a class="hanchor" ariaLabel="Anchor" href="#data-split">🔗&#xFE0E;</a> </h2>
+<p>For a data splitting strategy, let&rsquo;s reserve 25% of the stays to the test set. As in our <a href="/start/resampling/#data-split"><em>Evaluate your model with resampling</em></a> article, we know our outcome variable <code>children</code> is pretty imbalanced so we&rsquo;ll use a stratified random sample:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#00f">set.seed</span>(<span style="color:#666">123</span>)
+</span></span><span style="display:flex;"><span>splits      <span style="color:#666">&lt;-</span> <span style="color:#00f">initial_split</span>(hotels, strata <span style="color:#666">=</span> children)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hotel_other <span style="color:#666">&lt;-</span> <span style="color:#00f">training</span>(splits)
+</span></span><span style="display:flex;"><span>hotel_test  <span style="color:#666">&lt;-</span> <span style="color:#00f">testing</span>(splits)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># training set proportions by children</span>
+</span></span><span style="display:flex;"><span>hotel_other <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">count</span>(children) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">mutate</span>(prop <span style="color:#666">=</span> n<span style="color:#666">/</span><span style="color:#00f">sum</span>(n))
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # A tibble: 2 × 3</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   children     n   prop</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   &lt;fct&gt;    &lt;int&gt;  &lt;dbl&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 1 children  3027 0.0807</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 2 none     34473 0.919</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># test set proportions by children</span>
+</span></span><span style="display:flex;"><span>hotel_test  <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">count</span>(children) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">mutate</span>(prop <span style="color:#666">=</span> n<span style="color:#666">/</span><span style="color:#00f">sum</span>(n))
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # A tibble: 2 × 3</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   children     n   prop</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   &lt;fct&gt;    &lt;int&gt;  &lt;dbl&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 1 children  1011 0.0809</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 2 none     11489 0.919</span>
+</span></span></code></pre></div><p>In our articles so far, we&rsquo;ve relied on 10-fold cross-validation as the primary resampling method using <a href="https://rsample.tidymodels.org/reference/vfold_cv.html"><code>rsample::vfold_cv()</code></a>. This has created 10 different resamples of the training set (which we further split into <em>analysis</em> and <em>assessment</em> sets), producing 10 different performance metrics that we then aggregated.</p>
+<p>For this case study, rather than using multiple iterations of resampling, let&rsquo;s create a single resample called a <em>validation set</em>. In tidymodels, a validation set is treated as a single iteration of resampling. This will be a split from the 37,500 stays that were not used for testing, which we called <code>hotel_other</code>. This split creates two new datasets:</p>
+<ul>
+<li>
+<p>the set held out for the purpose of measuring performance, called the <em>validation set</em>, and</p>
+</li>
+<li>
+<p>the remaining data used to fit the model, called the <em>training set</em>.</p>
+</li>
+</ul>
+<img src="img/validation-split.svg" width="50%" style="display: block; margin: auto;" />
+<p>We&rsquo;ll use the <code>validation_split()</code> function to allocate 20% of the <code>hotel_other</code> stays to the <em>validation set</em> and 30,000 stays to the <em>training set</em>. This means that our model performance metrics will be computed on a single set of 7,500 hotel stays. This is fairly large, so the amount of data should provide enough precision to be a reliable indicator for how well each model predicts the outcome with a single iteration of resampling.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#00f">set.seed</span>(<span style="color:#666">234</span>)
+</span></span><span style="display:flex;"><span>val_set <span style="color:#666">&lt;-</span> <span style="color:#00f">validation_split</span>(hotel_other, 
+</span></span><span style="display:flex;"><span>                            strata <span style="color:#666">=</span> children, 
+</span></span><span style="display:flex;"><span>                            prop <span style="color:#666">=</span> <span style="color:#666">0.80</span>)
+</span></span><span style="display:flex;"><span>val_set
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # Validation Set Split (0.8/0.2)  using stratification </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # A tibble: 1 × 2</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   splits               id        </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   &lt;list&gt;               &lt;chr&gt;     </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 1 &lt;split [30000/7500]&gt; validation</span>
+</span></span></code></pre></div><p>This function, like <code>initial_split()</code>, has the same <code>strata</code> argument, which uses stratified sampling to create the resample. This means that we&rsquo;ll have roughly the same proportions of hotel stays with and without children in our new validation and training sets, as compared to the original <code>hotel_other</code> proportions.</p>
+<h2 id="first-model">A first model: penalized logistic regression&nbsp;<a class="hanchor" ariaLabel="Anchor" href="#first-model">🔗&#xFE0E;</a> </h2>
+<p>Since our outcome variable <code>children</code> is categorical, logistic regression would be a good first model to start. Let&rsquo;s use a model that can perform feature selection during training. The <a href="https://cran.r-project.org/web/packages/glmnet/index.html">glmnet</a> R package fits a generalized linear model via penalized maximum likelihood. This method of estimating the logistic regression slope parameters uses a <em>penalty</em> on the process so that less relevant predictors are driven towards a value of zero. One of the glmnet penalization methods, called the <a href="https://en.wikipedia.org/wiki/Lasso_(statistics)">lasso method</a>, can actually set the predictor slopes to zero if a large enough penalty is used.</p>
+<h3 id="build-the-model">Build the model</h3>
+<p>To specify a penalized logistic regression model that uses a feature selection penalty, let&rsquo;s use the parsnip package with the <a href="/find/parsnip/">glmnet engine</a>:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>lr_mod <span style="color:#666">&lt;-</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">logistic_reg</span>(penalty <span style="color:#666">=</span> <span style="color:#00f">tune</span>(), mixture <span style="color:#666">=</span> <span style="color:#666">1</span>) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">set_engine</span>(<span style="color:#ba2121">&#34;glmnet&#34;</span>)
+</span></span></code></pre></div><p>We&rsquo;ll set the <code>penalty</code> argument to <code>tune()</code> as a placeholder for now. This is a model hyperparameter that we will <a href="/start/tuning/">tune</a> to find the best value for making predictions with our data. Setting <code>mixture</code> to a value of one means that the glmnet model will potentially remove irrelevant predictors and choose a simpler model.</p>
+<h3 id="create-the-recipe">Create the recipe</h3>
+<p>Let&rsquo;s create a <a href="/start/recipes/">recipe</a> to define the preprocessing steps we need to prepare our hotel stays data for this model. It might make sense to create a set of date-based predictors that reflect important components related to the arrival date. We have already introduced a <a href="/start/recipes/#features">number of useful recipe steps</a> for creating features from dates:</p>
+<ul>
+<li>
+<p><code>step_date()</code> creates predictors for the year, month, and day of the week.</p>
+</li>
+<li>
+<p><code>step_holiday()</code> generates a set of indicator variables for specific holidays. Although we don&rsquo;t know where these two hotels are located, we do know that the countries for origin for most stays are based in Europe.</p>
+</li>
+<li>
+<p><code>step_rm()</code> removes variables; here we&rsquo;ll use it to remove the original date variable since we no longer want it in the model.</p>
+</li>
+</ul>
+<p>Additionally, all categorical predictors (e.g., <code>distribution_channel</code>, <code>hotel</code>, &hellip;) should be converted to dummy variables, and all numeric predictors need to be centered and scaled.</p>
+<ul>
+<li>
+<p><code>step_dummy()</code> converts characters or factors (i.e., nominal variables) into one or more numeric binary model terms for the levels of the original data.</p>
+</li>
+<li>
+<p><code>step_zv()</code> removes indicator variables that only contain a single unique value (e.g. all zeros). This is important because, for penalized models, the predictors should be centered and scaled.</p>
+</li>
+<li>
+<p><code>step_normalize()</code> centers and scales numeric variables.</p>
+</li>
+</ul>
+<p>Putting all these steps together into a recipe for a penalized logistic regression model, we have:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>holidays <span style="color:#666">&lt;-</span> <span style="color:#00f">c</span>(<span style="color:#ba2121">&#34;AllSouls&#34;</span>, <span style="color:#ba2121">&#34;AshWednesday&#34;</span>, <span style="color:#ba2121">&#34;ChristmasEve&#34;</span>, <span style="color:#ba2121">&#34;Easter&#34;</span>, 
+</span></span><span style="display:flex;"><span>              <span style="color:#ba2121">&#34;ChristmasDay&#34;</span>, <span style="color:#ba2121">&#34;GoodFriday&#34;</span>, <span style="color:#ba2121">&#34;NewYearsDay&#34;</span>, <span style="color:#ba2121">&#34;PalmSunday&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lr_recipe <span style="color:#666">&lt;-</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">recipe</span>(children <span style="color:#666">~</span> ., data <span style="color:#666">=</span> hotel_other) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">step_date</span>(arrival_date) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">step_holiday</span>(arrival_date, holidays <span style="color:#666">=</span> holidays) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">step_rm</span>(arrival_date) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">step_dummy</span>(<span style="color:#00f">all_nominal_predictors</span>()) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">step_zv</span>(<span style="color:#00f">all_predictors</span>()) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">step_normalize</span>(<span style="color:#00f">all_predictors</span>())
+</span></span></code></pre></div><h3 id="create-the-workflow">Create the workflow</h3>
+<p>As we introduced in <a href="/start/recipes/#fit-workflow"><em>Preprocess your data with recipes</em></a>, let&rsquo;s bundle the model and recipe into a single <code>workflow()</code> object to make management of the R objects easier:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>lr_workflow <span style="color:#666">&lt;-</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">workflow</span>() <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">add_model</span>(lr_mod) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">add_recipe</span>(lr_recipe)
+</span></span></code></pre></div><h3 id="create-the-grid-for-tuning">Create the grid for tuning</h3>
+<p>Before we fit this model, we need to set up a grid of <code>penalty</code> values to tune. In our <a href="/start/tuning/"><em>Tune model parameters</em></a> article, we used <a href="start/tuning/#tune-grid"><code>dials::grid_regular()</code></a> to create an expanded grid based on a combination of two hyperparameters. Since we have only one hyperparameter to tune here, we can set the grid up manually using a one-column tibble with 30 candidate values:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>lr_reg_grid <span style="color:#666">&lt;-</span> <span style="color:#00f">tibble</span>(penalty <span style="color:#666">=</span> <span style="color:#666">10</span><span style="color:#00f">^seq</span>(<span style="color:#666">-4</span>, <span style="color:#666">-1</span>, length.out <span style="color:#666">=</span> <span style="color:#666">30</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lr_reg_grid <span style="color:#666">%&gt;%</span> <span style="color:#00f">top_n</span>(<span style="color:#666">-5</span>) <span style="color:#408080;font-style:italic"># lowest penalty values</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; Selecting by penalty</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # A tibble: 5 × 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;    penalty</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;      &lt;dbl&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 1 0.0001  </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 2 0.000127</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 3 0.000161</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 4 0.000204</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 5 0.000259</span>
+</span></span><span style="display:flex;"><span>lr_reg_grid <span style="color:#666">%&gt;%</span> <span style="color:#00f">top_n</span>(<span style="color:#666">5</span>)  <span style="color:#408080;font-style:italic"># highest penalty values</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; Selecting by penalty</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # A tibble: 5 × 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   penalty</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;     &lt;dbl&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 1  0.0386</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 2  0.0489</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 3  0.0621</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 4  0.0788</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 5  0.1</span>
+</span></span></code></pre></div><h3 id="train-and-tune-the-model">Train and tune the model</h3>
+<p>Let&rsquo;s use <code>tune::tune_grid()</code> to train these 30 penalized logistic regression models. We&rsquo;ll also save the validation set predictions (via the call to <code>control_grid()</code>) so that diagnostic information can be available after the model fit. The area under the ROC curve will be used to quantify how well the model performs across a continuum of event thresholds (recall that the event rate—the proportion of stays including children— is very low for these data).</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>lr_res <span style="color:#666">&lt;-</span> 
+</span></span><span style="display:flex;"><span>  lr_workflow <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">tune_grid</span>(val_set,
+</span></span><span style="display:flex;"><span>            grid <span style="color:#666">=</span> lr_reg_grid,
+</span></span><span style="display:flex;"><span>            control <span style="color:#666">=</span> <span style="color:#00f">control_grid</span>(save_pred <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">TRUE</span>),
+</span></span><span style="display:flex;"><span>            metrics <span style="color:#666">=</span> <span style="color:#00f">metric_set</span>(roc_auc))
+</span></span></code></pre></div><p>It might be easier to visualize the validation set metrics by plotting the area under the ROC curve against the range of penalty values:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>lr_plot <span style="color:#666">&lt;-</span> 
+</span></span><span style="display:flex;"><span>  lr_res <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">collect_metrics</span>() <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">ggplot</span>(<span style="color:#00f">aes</span>(x <span style="color:#666">=</span> penalty, y <span style="color:#666">=</span> mean)) <span style="color:#666">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">geom_point</span>() <span style="color:#666">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">geom_line</span>() <span style="color:#666">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">ylab</span>(<span style="color:#ba2121">&#34;Area under the ROC Curve&#34;</span>) <span style="color:#666">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">scale_x_log10</span>(labels <span style="color:#666">=</span> scales<span style="color:#666">::</span><span style="color:#00f">label_number</span>())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lr_plot 
+</span></span></code></pre></div><img src="figs/logistic-results-1.svg" width="576" />
+<p>This plots shows us that model performance is generally better at the smaller penalty values. This suggests that the majority of the predictors are important to the model. We also see a steep drop in the area under the ROC curve towards the highest penalty values. This happens because a large enough penalty will remove <em>all</em> predictors from the model, and not surprisingly predictive accuracy plummets with no predictors in the model (recall that an ROC AUC value of 0.50 means that the model does no better than chance at predicting the correct class).</p>
+<p>Our model performance seems to plateau at the smaller penalty values, so going by the <code>roc_auc</code> metric alone could lead us to multiple options for the &ldquo;best&rdquo; value for this hyperparameter:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>top_models <span style="color:#666">&lt;-</span>
+</span></span><span style="display:flex;"><span>  lr_res <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">show_best</span>(<span style="color:#ba2121">&#34;roc_auc&#34;</span>, n <span style="color:#666">=</span> <span style="color:#666">15</span>) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">arrange</span>(penalty) 
+</span></span><span style="display:flex;"><span>top_models
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # A tibble: 15 × 7</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;     penalty .metric .estimator  mean     n std_err .config              </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;       &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;                </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  1 0.000127 roc_auc binary     0.872     1      NA Preprocessor1_Model02</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  2 0.000161 roc_auc binary     0.872     1      NA Preprocessor1_Model03</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  3 0.000204 roc_auc binary     0.873     1      NA Preprocessor1_Model04</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  4 0.000259 roc_auc binary     0.873     1      NA Preprocessor1_Model05</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  5 0.000329 roc_auc binary     0.874     1      NA Preprocessor1_Model06</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  6 0.000418 roc_auc binary     0.874     1      NA Preprocessor1_Model07</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  7 0.000530 roc_auc binary     0.875     1      NA Preprocessor1_Model08</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  8 0.000672 roc_auc binary     0.875     1      NA Preprocessor1_Model09</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  9 0.000853 roc_auc binary     0.876     1      NA Preprocessor1_Model10</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 10 0.00108  roc_auc binary     0.876     1      NA Preprocessor1_Model11</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 11 0.00137  roc_auc binary     0.876     1      NA Preprocessor1_Model12</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 12 0.00174  roc_auc binary     0.876     1      NA Preprocessor1_Model13</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 13 0.00221  roc_auc binary     0.876     1      NA Preprocessor1_Model14</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 14 0.00281  roc_auc binary     0.875     1      NA Preprocessor1_Model15</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 15 0.00356  roc_auc binary     0.873     1      NA Preprocessor1_Model16</span>
+</span></span></code></pre></div><p>Every candidate model in this tibble likely includes more predictor variables than the model in the row below it. If we used <code>select_best()</code>, it would return candidate model 11 with a penalty value of 0.00137, shown with the dotted line below.</p>
+<img src="figs/lr-plot-lines-1.svg" width="576" />
+<p>However, we may want to choose a penalty value further along the x-axis, closer to where we start to see the decline in model performance. For example, candidate model 12 with a penalty value of 0.00174 has effectively the same performance as the numerically best model, but might eliminate more predictors. This penalty value is marked by the solid line above. In general, fewer irrelevant predictors is better. If performance is about the same, we&rsquo;d prefer to choose a higher penalty value.</p>
+<p>Let&rsquo;s select this value and visualize the validation set ROC curve:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>lr_best <span style="color:#666">&lt;-</span> 
+</span></span><span style="display:flex;"><span>  lr_res <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">collect_metrics</span>() <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">arrange</span>(penalty) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">slice</span>(<span style="color:#666">12</span>)
+</span></span><span style="display:flex;"><span>lr_best
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # A tibble: 1 × 7</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   penalty .metric .estimator  mean     n std_err .config              </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;     &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;                </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 1 0.00137 roc_auc binary     0.876     1      NA Preprocessor1_Model12</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>lr_auc <span style="color:#666">&lt;-</span> 
+</span></span><span style="display:flex;"><span>  lr_res <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">collect_predictions</span>(parameters <span style="color:#666">=</span> lr_best) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">roc_curve</span>(children, .pred_children) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">mutate</span>(model <span style="color:#666">=</span> <span style="color:#ba2121">&#34;Logistic Regression&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">autoplot</span>(lr_auc)
+</span></span></code></pre></div><img src="figs/logistic-roc-curve-1.svg" width="672" />
+<p>The level of performance generated by this logistic regression model is good, but not groundbreaking. Perhaps the linear nature of the prediction equation is too limiting for this data set. As a next step, we might consider a highly non-linear model generated using a tree-based ensemble method.</p>
+<h2 id="second-model">A second model: tree-based ensemble&nbsp;<a class="hanchor" ariaLabel="Anchor" href="#second-model">🔗&#xFE0E;</a> </h2>
+<p>An effective and low-maintenance modeling technique is a <em>random forest</em>. This model was also used in our <a href="/start/resampling/"><em>Evaluate your model with resampling</em></a> article. Compared to logistic regression, a random forest model is more flexible. A random forest is an <em>ensemble model</em> typically made up of thousands of decision trees, where each individual tree sees a slightly different version of the training data and learns a sequence of splitting rules to predict new data. Each tree is non-linear, and aggregating across trees makes random forests also non-linear but more robust and stable compared to individual trees. Tree-based models like random forests require very little preprocessing and can effectively handle many types of predictors (sparse, skewed, continuous, categorical, etc.).</p>
+<h3 id="build-the-model-and-improve-training-time">Build the model and improve training time</h3>
+<p>Although the default hyperparameters for random forests tend to give reasonable results, we&rsquo;ll plan to tune two hyperparameters that we think could improve performance. Unfortunately, random forest models can be computationally expensive to train and to tune. The computations required for model tuning can usually be easily parallelized to improve training time. The tune package can do <a href="https://tune.tidymodels.org/articles/extras/optimizations.html#parallel-processing">parallel processing</a> for you, and allows users to use multiple cores or separate machines to fit models.</p>
+<p>But, here we are using a single validation set, so parallelization isn&rsquo;t an option using the tune package. For this specific case study, a good alternative is provided by the engine itself. The ranger package offers a built-in way to compute individual random forest models in parallel. To do this, we need to know the the number of cores we have to work with. We can use the parallel package to query the number of cores on your own computer to understand how much parallelization you can do:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>cores <span style="color:#666">&lt;-</span> parallel<span style="color:#666">::</span><span style="color:#00f">detectCores</span>()
+</span></span><span style="display:flex;"><span>cores
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; [1] 10</span>
+</span></span></code></pre></div><p>We have 10 cores to work with. We can pass this information to the ranger engine when we set up our parsnip <code>rand_forest()</code> model. To enable parallel processing, we can pass engine-specific arguments like <code>num.threads</code> to ranger when we set the engine:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>rf_mod <span style="color:#666">&lt;-</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">rand_forest</span>(mtry <span style="color:#666">=</span> <span style="color:#00f">tune</span>(), min_n <span style="color:#666">=</span> <span style="color:#00f">tune</span>(), trees <span style="color:#666">=</span> <span style="color:#666">1000</span>) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">set_engine</span>(<span style="color:#ba2121">&#34;ranger&#34;</span>, num.threads <span style="color:#666">=</span> cores) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">set_mode</span>(<span style="color:#ba2121">&#34;classification&#34;</span>)
+</span></span></code></pre></div><p>This works well in this modeling context, but it bears repeating: if you use any other resampling method, let tune do the parallel processing for you — we typically do not recommend relying on the modeling engine (like we did here) to do this.</p>
+<p>In this model, we used <code>tune()</code> as a placeholder for the <code>mtry</code> and <code>min_n</code> argument values, because these are our two hyperparameters that we will <a href="/start/tuning/">tune</a>.</p>
+<h3 id="create-the-recipe-and-workflow">Create the recipe and workflow</h3>
+<p>Unlike penalized logistic regression models, random forest models do not require <a href="https://bookdown.org/max/FES/categorical-trees.html">dummy</a> or normalized predictor variables. Nevertheless, we want to do some feature engineering again with our <code>arrival_date</code> variable. As before, the date predictor is engineered so that the random forest model does not need to work hard to tease these potential patterns from the data.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>rf_recipe <span style="color:#666">&lt;-</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">recipe</span>(children <span style="color:#666">~</span> ., data <span style="color:#666">=</span> hotel_other) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">step_date</span>(arrival_date) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">step_holiday</span>(arrival_date) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">step_rm</span>(arrival_date) 
+</span></span></code></pre></div><p>Adding this recipe to our parsnip model gives us a new workflow for predicting whether a hotel stay included children and/or babies as guests with a random forest:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>rf_workflow <span style="color:#666">&lt;-</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">workflow</span>() <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">add_model</span>(rf_mod) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">add_recipe</span>(rf_recipe)
+</span></span></code></pre></div><h3 id="train-and-tune-the-model-1">Train and tune the model</h3>
+<p>When we set up our parsnip model, we chose two hyperparameters for tuning:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>rf_mod
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; Random Forest Model Specification (classification)</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; Main Arguments:</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   mtry = tune()</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   trees = 1000</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   min_n = tune()</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; Engine-Specific Arguments:</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   num.threads = cores</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; Computational engine: ranger</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># show what will be tuned</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">extract_parameter_set_dials</span>(rf_mod)
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; Collection of 2 parameters for tuning</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;  identifier  type    object</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;        mtry  mtry nparam[?]</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;       min_n min_n nparam[+]</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; Model parameters needing finalization:</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;    # Randomly Selected Predictors (&#39;mtry&#39;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; See `?dials::finalize` or `?dials::update.parameters` for more information.</span>
+</span></span></code></pre></div><p>The <code>mtry</code> hyperparameter sets the number of predictor variables that each node in the decision tree &ldquo;sees&rdquo; and can learn about, so it can range from 1 to the total number of features present; when <code>mtry</code> = all possible features, the model is the same as bagging decision trees. The <code>min_n</code> hyperparameter sets the minimum <code>n</code> to split at any node.</p>
+<p>We will use a space-filling design to tune, with 25 candidate models:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#00f">set.seed</span>(<span style="color:#666">345</span>)
+</span></span><span style="display:flex;"><span>rf_res <span style="color:#666">&lt;-</span> 
+</span></span><span style="display:flex;"><span>  rf_workflow <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">tune_grid</span>(val_set,
+</span></span><span style="display:flex;"><span>            grid <span style="color:#666">=</span> <span style="color:#666">25</span>,
+</span></span><span style="display:flex;"><span>            control <span style="color:#666">=</span> <span style="color:#00f">control_grid</span>(save_pred <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">TRUE</span>),
+</span></span><span style="display:flex;"><span>            metrics <span style="color:#666">=</span> <span style="color:#00f">metric_set</span>(roc_auc))
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; i Creating pre-processing data to finalize unknown parameter: mtry</span>
+</span></span></code></pre></div><p>The message printed above <em>&ldquo;Creating pre-processing data to finalize unknown parameter: mtry&rdquo;</em> is related to the size of the data set. Since <code>mtry</code> depends on the number of predictors in the data set, <code>tune_grid()</code> determines the upper bound for <code>mtry</code> once it receives the data.</p>
+<p>Here are our top 5 random forest models, out of the 25 candidates:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>rf_res <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">show_best</span>(metric <span style="color:#666">=</span> <span style="color:#ba2121">&#34;roc_auc&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # A tibble: 5 × 8</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;    mtry min_n .metric .estimator  mean     n std_err .config              </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;                </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 1     8     7 roc_auc binary     0.926     1      NA Preprocessor1_Model13</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 2    12     7 roc_auc binary     0.926     1      NA Preprocessor1_Model01</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 3    13     4 roc_auc binary     0.925     1      NA Preprocessor1_Model05</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 4     9    12 roc_auc binary     0.924     1      NA Preprocessor1_Model19</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 5     6    18 roc_auc binary     0.924     1      NA Preprocessor1_Model24</span>
+</span></span></code></pre></div><p>Right away, we see that these values for area under the ROC look more promising than our top model using penalized logistic regression, which yielded an ROC AUC of 0.876.</p>
+<p>Plotting the results of the tuning process highlights that both <code>mtry</code> (number of predictors at each node) and <code>min_n</code> (minimum number of data points required to keep splitting) should be fairly small to optimize performance. However, the range of the y-axis indicates that the model is very robust to the choice of these parameter values — all but one of the ROC AUC values are greater than 0.90.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#00f">autoplot</span>(rf_res)
+</span></span></code></pre></div><img src="figs/rf-results-1.svg" width="672" />
+<p>Let&rsquo;s select the best model according to the ROC AUC metric. Our final tuning parameter values are:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>rf_best <span style="color:#666">&lt;-</span> 
+</span></span><span style="display:flex;"><span>  rf_res <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">select_best</span>(metric <span style="color:#666">=</span> <span style="color:#ba2121">&#34;roc_auc&#34;</span>)
+</span></span><span style="display:flex;"><span>rf_best
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # A tibble: 1 × 3</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;    mtry min_n .config              </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   &lt;int&gt; &lt;int&gt; &lt;chr&gt;                </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 1     8     7 Preprocessor1_Model13</span>
+</span></span></code></pre></div><p>To calculate the data needed to plot the ROC curve, we use <code>collect_predictions()</code>. This is only possible after tuning with <code>control_grid(save_pred = TRUE)</code>. In the output, you can see the two columns that hold our class probabilities for predicting hotel stays including and not including children.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>rf_res <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">collect_predictions</span>()
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # A tibble: 187,500 × 8</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   id         .pred_children .pred_none  .row  mtry min_n children .config       </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   &lt;chr&gt;               &lt;dbl&gt;      &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;fct&gt;    &lt;chr&gt;         </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 1 validation         0.152       0.848    13    12     7 none     Preprocessor1…</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 2 validation         0.0302      0.970    20    12     7 none     Preprocessor1…</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 3 validation         0.513       0.487    22    12     7 children Preprocessor1…</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 4 validation         0.0103      0.990    23    12     7 none     Preprocessor1…</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 5 validation         0.0111      0.989    31    12     7 none     Preprocessor1…</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # … with 187,495 more rows</span>
+</span></span></code></pre></div><p>To filter the predictions for only our best random forest model, we can use the <code>parameters</code> argument and pass it our tibble with the best hyperparameter values from tuning, which we called <code>rf_best</code>:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>rf_auc <span style="color:#666">&lt;-</span> 
+</span></span><span style="display:flex;"><span>  rf_res <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">collect_predictions</span>(parameters <span style="color:#666">=</span> rf_best) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">roc_curve</span>(children, .pred_children) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">mutate</span>(model <span style="color:#666">=</span> <span style="color:#ba2121">&#34;Random Forest&#34;</span>)
+</span></span></code></pre></div><p>Now, we can compare the validation set ROC curves for our top penalized logistic regression model and random forest model:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#00f">bind_rows</span>(rf_auc, lr_auc) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">ggplot</span>(<span style="color:#00f">aes</span>(x <span style="color:#666">=</span> <span style="color:#666">1</span> <span style="color:#666">-</span> specificity, y <span style="color:#666">=</span> sensitivity, col <span style="color:#666">=</span> model)) <span style="color:#666">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">geom_path</span>(lwd <span style="color:#666">=</span> <span style="color:#666">1.5</span>, alpha <span style="color:#666">=</span> <span style="color:#666">0.8</span>) <span style="color:#666">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">geom_abline</span>(lty <span style="color:#666">=</span> <span style="color:#666">3</span>) <span style="color:#666">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">coord_equal</span>() <span style="color:#666">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">scale_color_viridis_d</span>(option <span style="color:#666">=</span> <span style="color:#ba2121">&#34;plasma&#34;</span>, end <span style="color:#666">=</span> <span style="color:#666">.6</span>)
+</span></span></code></pre></div><img src="figs/rf-lr-roc-curve-1.svg" width="672" />
+<p>The random forest is uniformly better across event probability thresholds.</p>
+<h2 id="last-fit">The last fit&nbsp;<a class="hanchor" ariaLabel="Anchor" href="#last-fit">🔗&#xFE0E;</a> </h2>
+<p>Our goal was to predict which hotel stays included children and/or babies. The random forest model clearly performed better than the penalized logistic regression model, and would be our best bet for predicting hotel stays with and without children. After selecting our best model and hyperparameter values, our last step is to fit the final model on all the rows of data not originally held out for testing (both the training and the validation sets combined), and then evaluate the model performance one last time with the held-out test set.</p>
+<p>We&rsquo;ll start by building our parsnip model object again from scratch. We take our best hyperparameter values from our random forest model. When we set the engine, we add a new argument: <code>importance = &quot;impurity&quot;</code>. This will provide <em>variable importance</em> scores for this last model, which gives some insight into which predictors drive model performance.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># the last model</span>
+</span></span><span style="display:flex;"><span>last_rf_mod <span style="color:#666">&lt;-</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">rand_forest</span>(mtry <span style="color:#666">=</span> <span style="color:#666">8</span>, min_n <span style="color:#666">=</span> <span style="color:#666">7</span>, trees <span style="color:#666">=</span> <span style="color:#666">1000</span>) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">set_engine</span>(<span style="color:#ba2121">&#34;ranger&#34;</span>, num.threads <span style="color:#666">=</span> cores, importance <span style="color:#666">=</span> <span style="color:#ba2121">&#34;impurity&#34;</span>) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">set_mode</span>(<span style="color:#ba2121">&#34;classification&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># the last workflow</span>
+</span></span><span style="display:flex;"><span>last_rf_workflow <span style="color:#666">&lt;-</span> 
+</span></span><span style="display:flex;"><span>  rf_workflow <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">update_model</span>(last_rf_mod)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># the last fit</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">set.seed</span>(<span style="color:#666">345</span>)
+</span></span><span style="display:flex;"><span>last_rf_fit <span style="color:#666">&lt;-</span> 
+</span></span><span style="display:flex;"><span>  last_rf_workflow <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">last_fit</span>(splits)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>last_rf_fit
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # Resampling results</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # Manual resampling </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # A tibble: 1 × 6</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   splits                id             .metrics .notes   .predictions .workflow </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   &lt;list&gt;                &lt;chr&gt;          &lt;list&gt;   &lt;list&gt;   &lt;list&gt;       &lt;list&gt;    </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 1 &lt;split [37500/12500]&gt; train/test sp… &lt;tibble&gt; &lt;tibble&gt; &lt;tibble&gt;     &lt;workflow&gt;</span>
+</span></span></code></pre></div><p>This fitted workflow contains <em>everything</em>, including our final metrics based on the test set. So, how did this model do on the test set? Was the validation set a good estimate of future performance?</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>last_rf_fit <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">collect_metrics</span>()
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; # A tibble: 2 × 4</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   .metric  .estimator .estimate .config             </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt;   &lt;chr&gt;    &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;               </span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 1 accuracy binary         0.946 Preprocessor1_Model1</span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">#&gt; 2 roc_auc  binary         0.923 Preprocessor1_Model1</span>
+</span></span></code></pre></div><p>This ROC AUC value is pretty close to what we saw when we tuned the random forest model with the validation set, which is good news. That means that our estimate of how well our model would perform with new data was not too far off from how well our model actually performed with the unseen test data.</p>
+<p>We can access those variable importance scores via the <code>.workflow</code> column. We can <a href="https://tune.tidymodels.org/reference/extract-tune.html">extract out the fit</a> from the workflow object, and then use the vip package to visualize the variable importance scores for the top 20 features:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>last_rf_fit <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">extract_fit_parsnip</span>() <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">vip</span>(num_features <span style="color:#666">=</span> <span style="color:#666">20</span>)
+</span></span></code></pre></div><img src="figs/rf-importance-1.svg" width="672" />
+<p>The most important predictors in whether a hotel stay had children or not were the daily cost for the room, the type of room reserved, the time between the creation of the reservation and the arrival date, and the type of room that was ultimately assigned.</p>
+<p>Let&rsquo;s generate our last ROC curve to visualize. Since the event we are predicting is the first level in the <code>children</code> factor (&ldquo;children&rdquo;), we provide <code>roc_curve()</code> with the <a href="https://yardstick.tidymodels.org/reference/roc_curve.html#relevant-level">relevant class probability</a> <code>.pred_children</code>:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>last_rf_fit <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">collect_predictions</span>() <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">roc_curve</span>(children, .pred_children) <span style="color:#666">%&gt;%</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">autoplot</span>()
+</span></span></code></pre></div><img src="figs/test-set-roc-curve-1.svg" width="672" />
+<p>Based on these results, the validation set and test set performance statistics are very close, so we would have pretty high confidence that our random forest model with the selected hyperparameters would perform well when predicting new data.</p>
+<h2 id="next">Where to next?&nbsp;<a class="hanchor" ariaLabel="Anchor" href="#next">🔗&#xFE0E;</a> </h2>
+<p>If you&rsquo;ve made it to the end of this series of <a href="/start/"><em>Get Started</em></a> articles, we hope you feel ready to learn more! You now know the core tidymodels packages and how they fit together. After you are comfortable with the basics we introduced in this series, you can <a href="/learn/">learn how to go farther</a> with tidymodels in your modeling and machine learning projects.</p>
+<p>Here are some more ideas for where to go next:</p>
+<ul>
+<li>
+<p>Study up on statistics and modeling with our comprehensive <a href="/books/">books</a>.</p>
+</li>
+<li>
+<p>Dig deeper into the <a href="/packages/">package documentation sites</a> to find functions that meet your modeling needs. Use the <a href="/find/">searchable tables</a> to explore what is possible.</p>
+</li>
+<li>
+<p>Keep up with the latest about tidymodels packages at the <a href="https://www.tidyverse.org/tags/tidymodels/">tidyverse blog</a>.</p>
+</li>
+<li>
+<p>Find ways to ask for <a href="/help/">help</a> and <a href="/contribute">contribute to tidymodels</a> to help others.</p>
+</li>
+</ul>
+<h3 id="centerhappy-modelingcenter"><center>Happy modeling!</center></h3>
+<h2 id="session-information">Session information&nbsp;<a class="hanchor" ariaLabel="Anchor" href="#session-information">🔗&#xFE0E;</a> </h2>
+<pre tabindex="0"><code>#&gt; ─ Session info ─────────────────────────────────────────────────────
+#&gt;  setting  value
+#&gt;  version  R version 4.1.2 (2021-11-01)
+#&gt;  os       macOS Monterey 12.3.1
+#&gt;  system   aarch64, darwin20
+#&gt;  ui       X11
+#&gt;  language (EN)
+#&gt;  collate  en_GB.UTF-8
+#&gt;  ctype    en_GB.UTF-8
+#&gt;  tz       Europe/London
+#&gt;  date     2022-04-28
+#&gt;  pandoc   2.18 @ /Applications/RStudio.app/Contents/MacOS/quarto/bin/tools/ (via rmarkdown)
+#&gt; 
+#&gt; ─ Packages ─────────────────────────────────────────────────────────
+#&gt;  package    * version date (UTC) lib source
+#&gt;  broom      * 0.8.0   2022-04-13 [1] CRAN (R 4.1.1)
+#&gt;  dials      * 0.1.1   2022-04-06 [1] CRAN (R 4.1.2)
+#&gt;  dplyr      * 1.0.8   2022-02-08 [1] CRAN (R 4.1.2)
+#&gt;  ggplot2    * 3.3.5   2021-06-25 [1] CRAN (R 4.1.1)
+#&gt;  infer      * 1.0.0   2021-08-13 [1] CRAN (R 4.1.1)
+#&gt;  parsnip    * 0.2.1   2022-03-17 [1] CRAN (R 4.1.1)
+#&gt;  purrr      * 0.3.4   2020-04-17 [1] CRAN (R 4.1.0)
+#&gt;  ranger       0.13.1  2021-07-14 [1] CRAN (R 4.1.2)
+#&gt;  readr      * 2.1.2   2022-01-30 [1] CRAN (R 4.1.1)
+#&gt;  recipes    * 0.2.0   2022-02-18 [1] CRAN (R 4.1.1)
+#&gt;  rlang        1.0.2   2022-03-04 [1] CRAN (R 4.1.1)
+#&gt;  rsample    * 0.1.1   2021-11-08 [1] CRAN (R 4.1.2)
+#&gt;  tibble     * 3.1.6   2021-11-07 [1] CRAN (R 4.1.1)
+#&gt;  tidymodels * 0.2.0   2022-03-19 [1] CRAN (R 4.1.1)
+#&gt;  tune       * 0.2.0   2022-03-19 [1] CRAN (R 4.1.2)
+#&gt;  vip        * 0.3.2   2020-12-17 [1] CRAN (R 4.1.2)
+#&gt;  workflows  * 0.2.6   2022-03-18 [1] CRAN (R 4.1.2)
+#&gt;  yardstick  * 0.0.9   2021-11-22 [1] CRAN (R 4.1.1)
+#&gt; 
+#&gt;  [1] /Library/Frameworks/R.framework/Versions/4.1-arm64/Resources/library
+#&gt; 
+#&gt; ────────────────────────────────────────────────────────────────────
+</code></pre>
+
+      </div>
+
+    <div class="article-footer">
+      
+      <div style="float:left">
+      
+        <div class='itemTitle' align="left" style='font-size:.8em; line-height:2em'>Previous</div>
+        <a href="/start/tuning/">Tune model parameters</a>
+      
+      </div>
+      
+      
+      <div style="float:right">
+      
+      
+        <a href="https://tinystats.github.io/teacups-giraffes-and-statistics/" target="_blank">
+        <div class="giraffe"></div>
+        </a>
+      
+      </div>
+     </div> 
+      
+
+      </div>
+
+    </div>
+  </div>  
+</div> 
+
+
+        <div id="rStudioFooter" class="band">
+          <div class="bandContent">
+            <div id="copyright">
+              
+              
+              Proudly supported by <a class="rstudioLogo" href="https://www.rstudio.com/"></a>
+              
+            </div>
+            <div id="logos">
+              
+              
+            </div>
+            
+            <span class="float-right" aria-hidden="true">
+              <a href="#" class="back-to-top">
+                <span class="button_icon">
+                  <i class="fas fa-chevron-up fa-2x"></i>
+                </span>
+              </a>
+            </span>
+            
+          </div>
+        </div>
+
+      </div>  
+    </div>  
+
+    
+
+    
+<script src="/js/math-code.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});
+</script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-20375833-29', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  </body>
+</html>
+
+</body>
+</html>
