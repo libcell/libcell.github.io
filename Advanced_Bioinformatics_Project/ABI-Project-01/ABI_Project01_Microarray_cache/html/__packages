@@ -1,0 +1,13 @@
+dplyr
+data.table
+modelsummary
+kableExtra
+ggplot2
+hrbrthemes
+BiocGenerics
+Biobase
+GEOquery
+affy
+genefilter
+gcrma
+simpleaffy
